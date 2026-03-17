@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PepsiCo Project - Erandi M. Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #414c31;
+            --secondary-color: #f9c32c;
+            --light-bg: #fcf5e1;
+            --text-dark: #37342e;
+            --text-light: #fdf5e1;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafafa;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* Header Navigation */
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+        }
+
+        .navbar-brand:hover {
+            color: var(--secondary-color) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%);
+        }
+
+        .hero-section h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            letter-spacing: -1px;
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 0;
+            max-width: 600px;
+            font-weight: 400;
+        }
+
+        /* Impact Snapshot Card */
+        .impact-snapshot {
+            background: #fff;
+            border-radius: 24px;
+            padding: 2.5rem;
+            margin: 4rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-left: 6px solid var(--secondary-color);
+        }
+
+        .impact-snapshot h3 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .impact-item {
+            text-align: center;
+        }
+
+        .impact-item h4 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-item p {
+            font-size: 0.95rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Overview Grid */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .overview-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .overview-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .overview-card h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .overview-card p {
+            font-size: 1.1rem;
+            color: #333;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 4rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .section h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem 0;
+            color: #333;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .section ul {
+            font-size: 1.1rem;
+            color: #555;
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section li {
+            margin-bottom: 0.8rem;
+            line-height: 1.8;
+        }
+
+        /* Image Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .image-grid img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.02);
+        }
+
+        .full-width-image {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            padding: 3rem 0;
+            margin-top: 4rem;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        footer a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container-lg">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container-lg">
+            <h1>PepsiCo</h1>
+            <p>Redesign of PepsiCo’s global intranet, a platform used across all regions and business units. 
+                </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container-lg">
+
+        <!-- Interactive Design Showcase -->
+        <section class="section">
+            <h2>Final product</h2>
+            <p style="font-size: 1.1rem; color: #555; margin-bottom: 2.5rem; font-style: italic;">Due to company confidentiality, I’m only able to share a limited selection of images and 
+                high level details from this project.</p>
+            <div class="image-grid" style="grid-template-columns: 1fr; gap: 2.5rem;">
+                <img src="images/mypepsico page.png" alt="Full App Overview" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);">
+            </div>
+            <div class="image-grid" style="grid-template-columns: 1fr; gap: 2.5rem;">
+                <img src="images/mobile overview.jpeg" alt="Full App Overview" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);">
+            </div>
+            <div class="image-grid" style="grid-template-columns: 1fr; gap: 2.5rem;">
+                <img src="images/Mobile app.jpeg" alt="Full App Overview" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);">
+            </div>
+        </section>
+
+        <!-- Project Overview -->
+        <section class="section">
+            <h2>Project Overview</h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h4>Summary</h4>
+                    <p>Redesign of PepsiCo’s global intranet, a platform used across regions and business units. 
+                        My main focus was improving the Information Architecture and overall layout to make the 
+                        experience more intuitive and user friendly.</p>
+                </div>
+                <div class="overview-card">
+                    <h4>Role</h4>
+                    <p>UX Designer, Information Architecture, navigation redesign, taxonomy refinement, research support, interaction design.</p>
+                </div>
+                <div class="overview-card">
+                    <h4>Team</h4>
+                    <p>Worked alongside a UX Architect, UX Designers, Product Managers, Engineering teams, Content/Communications partners, and the designer responsible for the brand redesign.</p>
+                </div>
+                <div class="overview-card">
+                    <h4>Timeline</h4>
+                    <p>Multi phase project spanning three years, covering discovery, IA restructuring, prototyping, and iterative validation.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Context & Problem -->
+        <section class="section">
+            <h2>Context & Problem</h2>
+            <h3>Background</h3>
+            <p>PepsiCo’s global intranet is used daily by employees across regions, functions, and business units. 
+                Over the years, the platform had become a fragmented ecosystem with hundreds of microsites, 
+                inconsistent layouts, and duplicated content. The legacy homepage was especially problematic: 
+                it was overloaded with news and promotional content, but none of it helped employees complete 
+                their day to day tasks. Key tools and resources were buried, navigation patterns were unclear, 
+                and the overall experience didn’t support how people actually worked. With the introduction of 
+                a refreshed brand and new communication standards, the intranet needed a redesign that improved
+                 usability while aligning with the updated visual direction.</p>
+            <h3>The Challenge</h3>
+            <p>The main challenge was to simplify a complex, content heavy environment and make it easier for 
+                employees to find what they needed. This required rethinking the Information Architecture,
+                 restructuring the navigation model, and redesigning the mega menu, while also improving the 
+                 taxonomy across the entire site. The goal was to create a more intuitive, consistent experience 
+                 that supported different user groups, reduced friction, and aligned with the new brand direction.</p>
+        </section>
+
+        <!-- Goals & Responsibilities -->
+        <section class="section">
+            <h2>Goals & Responsibilities</h2>
+            <h3>Primary Goals</h3>
+            <ul>
+                <li>Improve the Information Architecture to reduce complexity and make content easier to find.</li>
+                <li>Redesign the navigation model and mega menu to support faster, more intuitive access to tools and resources.</li>
+                <li>Refine the sitewide taxonomy to create a consistent structure across hundreds of microsites.</li>
+                <li>Align the intranet with the new brand direction and updated communication standards.</li>
+                <li>Create a more useful homepage that supports employees’ day to day tasks instead of overwhelming them with news.</li>
+                <li>Establish a scalable structure that could support future growth and content governance.</li>
+            </ul>
+            <h3>My Responsibilities</h3>
+            <ul>
+                <li>Reworked the Information Architecture, including navigation flows, content grouping, and hierarchy.</li>
+                <li>Redesigned the mega menu and key navigation patterns to reduce click paths and improve clarity.</li>
+                <li>Refined the taxonomy across the entire site to ensure consistency and easier content discovery.</li>
+                <li>Supported research activities such as card sorting, usability testing, and stakeholder interviews.</li>
+                <li>Created wireframes, interaction patterns, and layout improvements for core pages.</li>
+                <li>Collaborated with Product Managers, Engineering teams, Communications partners, and the brand designer to ensure alignment across design, content, and technical constraints.</li>
+                <li>Contributed to the structure and logic behind components used in the evolving design system.</li>
+                <li>Led daily calls with developers to ensure the build matched the design intent, answering questions, clarifying interactions, and occasionally helping with HTML and CSS when needed.</li>
+                <li>Identified layout and usability issues during development, catching small but impactful improvements that could have been missed due to the team’s workload and tight timelines.</li>
+            </ul>
+        </section>
+
+        <!-- Information Architecture -->
+        <section class="section">
+            <h2>Information Architecture</h2>
+            <p>The intranet’s structure had grown organically over the years, resulting in duplicated content, 
+                inconsistent naming, and navigation patterns that didn’t match how employees actually searched 
+                for information. My work focused on reorganizing this ecosystem so it could support clearer paths, 
+                faster access, and a more intuitive experience across regions and business units.
+                To do this, I restructured the navigation model, regrouped content based on user tasks, and redesigned 
+                the mega menu to reduce unnecessary steps. Improving the mega menu also meant revisiting the entire site’s 
+                taxonomy, cleaning up labels, aligning terminology across teams, and creating a more consistent hierarchy 
+                that could scale as new content was added. I collaborated closely with the UX Architect and content partners 
+                to validate these decisions through card sorting, stakeholder reviews, and iterative testing.
+                The result was a more coherent IA that supported both everyday tasks and long term governance, 
+                making it easier for employees to find what they needed without getting lost in the complexity of the system.</p>
+        </section>
+
+        <!-- Reflection -->
+        <section class="section">
+            <h2>Reflection</h2>
+         <p>Redesigning such a large intranet helped me refine how I approach complexity. 
+            I learned how much impact clear taxonomy and navigation decisions can have on 
+            people’s day to day work, and how essential it is to stay aligned with developers 
+            during implementation. Supporting them with design clarification, and sometimes
+            even HTML/CSS, showed me how small details can easily get lost when teams are 
+            under pressure. Going forward, I’d push even harder for early alignment on content
+            governance and long term maintenance.</p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-lg">
+            <p>&copy; Erandi M. | <a href="index.html">Back to Portfolio</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

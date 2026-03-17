@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CULTURATE Project - Erandi M. Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #414c31;
+            --secondary-color: #f9c32c;
+            --light-bg: #fcf5e1;
+            --text-dark: #37342e;
+            --text-light: #fdf5e1;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafafa;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* Header Navigation */
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+        }
+
+        .navbar-brand:hover {
+            color: var(--secondary-color) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%);
+        }
+
+        .hero-section h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            letter-spacing: -1px;
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 0;
+            max-width: 600px;
+            font-weight: 400;
+        }
+
+        /* Impact Snapshot Card */
+        .impact-snapshot {
+            background: #fff;
+            border-radius: 24px;
+            padding: 2.5rem;
+            margin: 4rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-left: 6px solid var(--secondary-color);
+        }
+
+        .impact-snapshot h3 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .impact-item {
+            text-align: center;
+        }
+
+        .impact-item h4 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-item p {
+            font-size: 0.95rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Overview Grid */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .overview-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .overview-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .overview-card h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .overview-card p {
+            font-size: 1.1rem;
+            color: #333;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 4rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .section h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem 0;
+            color: #333;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .section ul {
+            font-size: 1.1rem;
+            color: #555;
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section li {
+            margin-bottom: 0.8rem;
+            line-height: 1.8;
+        }
+
+        /* Image Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .image-grid img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Image Collage - 2 rows of 4 images */
+        .image-collage {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .image-collage img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            object-fit: cover;
+        }
+
+        .image-collage img:hover {
+            transform: scale(1.02);
+        }
+
+        .image-collage img:nth-child(1) {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .image-collage img:nth-child(2) {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .image-collage img:nth-child(3) {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .image-collage img:nth-child(4) {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .image-collage img:nth-child(5) {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .image-collage img:nth-child(6) {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .image-collage img:nth-child(7) {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .image-collage img:nth-child(8) {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        @media (max-width: 768px) {
+            .image-collage {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .full-width-image {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            padding: 3rem 0;
+            margin-top: 4rem;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        footer a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container-lg">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container-lg">
+            <h1>CULTURATE</h1>
+            <p>Designing the digital infrastructure for a global cultural conference through innovative information architecture and user centric event experience.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container-lg">
+        <!-- Final Designs - Platform Showcase -->
+        <section class="section">
+            <h2>Final Product</h2>
+            
+            <div class="image-collage">
+                <img src="images/Home mobile.png" alt="Mobile Homepage">
+                <img src="images/Pills.png" alt="Mobile Session Browse">
+                <img src="images/Museum.png" alt="Mobile My Agenda">
+                <img src="images/Calendar.png" alt="Session Discovery">
+                <img src="images/Ticket.png" alt="Speaker Profiles">
+                <img src="images/Enter information.png" alt="Personal Agenda">
+                <img src="images/Payment.png" alt="Personal Agenda">
+                <img src="images/Payment-1.png" alt="Personal Agenda">
+            </div>
+        </section>
+
+        <!-- Project Overview -->
+        <section class="section">
+            <h2>Project Overview</h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h4>Summary</h4>
+                    <p>Mobile app designed to centralize all museums in Buenos Aires, Argentina, giving users a simple and engaging way to discover cultural spaces across the city.</p>
+                </div>
+                <div class="overview-card">
+                    <h4>Role</h4>
+                    <p>UX Designer, responsible for shaping the user experience across research, flow definition, interaction design, and prototyping</p>
+                </div>
+                <div class="overview-card">
+                    <h4>Team</h4>
+                    <p>A small, multidisciplinary team composed of two UX designers, one graphic designer, and one marketing partner.</p>
+                </div>
+                <div class="overview-card">
+                    <h4>Timeline</h4>
+                    <p>Multi phase project including research, concept development, prototyping, user testing, and iterative refinement.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Context & Problem -->
+        <section class="section">
+            <h2>Context & Problem</h2>
+            <h3>Background</h3>
+            <p>Buenos Aires has one of the richest museum ecosystems in Latin America, but information about these spaces is scattered across 
+                individual websites, outdated directories, and inconsistent social media pages. For locals and tourists who love cultural 
+                experiences, finding accurate details location, hours, exhibitions, ticketing, often requires jumping between multiple sources. 
+                CULTURATE was created to bring all museums into one centralized mobile platform, making cultural exploration easier, more 
+                intuitive, and more enjoyable. The app allows users to search through filters, use a search bar, explore an interactive map
+                that detects their location, save favorites, read and leave reviews, and book tickets directly from the platform.</p>
+            <h3>The Challenge</h3>
+            <p>The main challenge was designing an experience that could organize a large amount of diverse museum information while still 
+                feeling simple, modern, and easy to navigate. Users needed multiple ways to discover museums, by interest, proximity, or 
+                name, without feeling overwhelmed by options. The platform also had to support richer interactions like reviews, favorites, 
+                and ticket booking, all within a clean and intuitive mobile flow. Because the cultural landscape of Buenos Aires is constantly 
+                evolving, the product needed a flexible structure that could scale as new museums, features, and content types were added. 
+                Balancing clarity, depth, and scalability became central to shaping the UX strategy.</p>
+        </section>
+
+        <!-- Goals & Responsibilities -->
+        <section class="section">
+            <h2>Goals & Responsibilities</h2>
+            <h3>Primary Goals</h3>
+            <ul>
+                <li>Centralize all museums in Buenos Aires into a single, easy to navigate mobile platform.</li>
+                <li>Create multiple discovery paths filters, search, and an interactive map to help users find museums that match their interests.</li>
+                <li>Design a simple, modern experience that makes cultural exploration accessible to both locals and tourists.</li>
+                <li>Support richer engagement through features like favorites, reviews, and ticket booking.</li>
+                <li>Build a scalable structure that can grow as new museums, categories, and features are added.</li>
+                <li>Establish a visual and interaction language that feels culturally aligned with Buenos Aires.</li>
+            </ul>
+            <h3>My Responsibilities</h3>
+            <ul>
+                <li>Conducted user research to understand how people search for museums and what information they value most.</li>
+                <li>Defined the Information Architecture and core flows for search, filters, map exploration, museum details, favorites, reviews, and ticket booking.</li>
+                <li>Designed wireframes and interactive prototypes to validate usability and refine the experience.</li>
+                <li>Collaborated with the second UX designer to align on flows, patterns, and interaction logic.</li>
+                <li>Worked closely with the graphic designer to integrate branding, color, and visual identity into the UI.</li>
+                <li>Partnered with the marketing team member to ensure content, tone, and positioning matched user motivations and cultural engagement goals.</li>
+                <li>Iterated on the design through testing and feedback, refining clarity, navigation, and overall usability.</li>
+        </section>
+
+        <!-- Information Architecture -->
+        <section class="section">
+            <h2>Information Architecture</h2>
+            <p>CULTURATE required an Information Architecture that could organize a large and diverse set of museums while still feeling 
+                simple and intuitive for users exploring cultural spaces across Buenos Aires. Because the app supports multiple discovery 
+                paths, filters, search, and an interactive map, the IA needed to balance flexibility with clarity, ensuring users could always 
+                find what they were looking for without cognitive overload. <br><br>The structure was built around the three primary ways people 
+                naturally search for museums: by interest, by name, and by proximity. This led to a navigation model centered on Search, 
+                Filters, and Map, each offering a different entry point into the same unified museum database. From there, the museum 
+                detail pages became the core content hub, housing essential information such as hours, exhibitions, location, reviews, 
+                and ticket booking options.<br><br> To support deeper engagement, the IA also included personalized spaces like Favorites and 
+                Reviews, giving users a sense of ownership and continuity as they explored the city’s cultural offerings. Throughout the 
+                process, we refined naming, grouping, and hierarchy to keep the experience lightweight and predictable, even as new museums 
+                or categories were added.
+        </section>
+
+
+
+        <!-- Reflection -->
+        <section class="section">
+            <h2>Reflection</h2>
+            <p>Working on CULTURATE showed me how essential it is to design for clarity when a product brings together a large amount of 
+            diverse information. Centralizing all the museums in Buenos Aires into a single mobile experience required constant negotiation 
+            between depth and simplicity, ensuring users could explore freely without ever feeling overwhelmed or lost. It pushed me to think 
+            more strategically about how people search, how they make decisions, and how to support different discovery behaviors within one 
+            coherent structure. <br><br> Collaborating with a multidisciplinary team reinforced the value of cross disciplinary alignment. 
+            Each perspective, UX, visual design, and marketing, shaped the product in a different way, and balancing these inputs made me more 
+            intentional about communication, documentation, and shared decision making. As the app evolved, I learned to iterate quickly, 
+            validate assumptions early, and design with scalability in mind, knowing that new museums, categories, and features would continue 
+            to expand the experience. This project strengthened my ability to create systems that feel simple on the surface but are 
+            supported by thoughtful structure underneath, an approach that has become central to how I design complex, content rich products.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-lg">
+            <p>&copy; Erandi M. | <a href="index.html">Back to Portfolio</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

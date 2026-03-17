@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amorea Project - Erandi M. Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #414c31;
+            --secondary-color: #f9c32c;
+            --light-bg: #fcf5e1;
+            --text-dark: #37342e;
+            --text-light: #fdf5e1;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafafa;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* Header Navigation */
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+        }
+
+        .navbar-brand:hover {
+            color: var(--secondary-color) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%);
+        }
+
+        .hero-section h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            letter-spacing: -1px;
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 0;
+            max-width: 600px;
+            font-weight: 400;
+        }
+
+        /* Impact Snapshot Card */
+        .impact-snapshot {
+            background: #fff;
+            border-radius: 24px;
+            padding: 2.5rem;
+            margin: 4rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-left: 6px solid var(--secondary-color);
+        }
+
+        .impact-snapshot h3 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .impact-item {
+            text-align: center;
+        }
+
+        .impact-item h4 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-item p {
+            font-size: 0.95rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Overview Grid */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .overview-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .overview-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .overview-card h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .overview-card p {
+            font-size: 1.1rem;
+            color: #333;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 4rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .section h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem 0;
+            color: #333;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .section ul {
+            font-size: 1.1rem;
+            color: #555;
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section li {
+            margin-bottom: 0.8rem;
+            line-height: 1.8;
+        }
+
+        /* Image Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .image-grid img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.02);
+        }
+
+        .full-width-image {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            padding: 3rem 0;
+            margin-top: 4rem;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        footer a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container-lg">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container-lg">
+            <h1>Amorea</h1>
+            <p>Wedding invitation and guest management platform designed to help couples create, customize, and share their digital invitations with ease.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container-lg">
+        <!-- Final product & Interactive Showcase -->
+        <section class="section">
+            <h2>Final Product</h2>
+            <div class="image-grid" style="grid-template-columns: 1fr; gap: 2.5rem;">
+                <img src="images/Amorea_Login.png" alt="Website Homepage" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);">
+            </div>
+
+            <div class="image-grid" style="grid-template-columns: 1fr; gap: 2.5rem;">
+                <img src="images/Amorea_Invitacion.png" alt="Website Homepage" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);">
+            </div>
+
+            <div class="image-grid" style="grid-template-columns: 1fr; gap: 2.5rem;">
+                <img src="images/Amorea_Landing.png" alt="Website Homepage" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);">
+            </div>
+
+        </section>
+
+        <!-- Project Overview -->
+        <section class="section">
+            <h2>Project Overview</h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h4>Summary</h4>
+                    <p>The experience focuses on simplicity, emotional warmth, and clear 
+                        guidance supporting users as they design their invitation, manage RSVPs, and keep track of guest details 
+                        without friction.</p>
+                </div>
+                <div class="overview-card">
+                    <h4>Role</h4>
+                    <p>Product Designer & UX Lead, responsible for shaping the onboarding experience, defining core flows, 
+                        refining layout and interaction patterns, and crafting emotionally resonant microcopy across the platform.</p>
+                </div>
+                <div class="overview-card">
+                    <h4>Team</h4>
+                    <p>A small, focused team composed of the developer, collaborating closely to define features, refine flows, and bring the product to life.</p>
+                </div>
+                <div class="overview-card">
+                    <h4>Timeline</h4>
+                    <p>Ongoing multi phase project, including discovery, flow definition, onboarding design, iterative prototyping, and continuous refinement as new features are developed.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Context & Problem -->
+        <section class="section">
+            <h2>Context & Problem</h2>
+            <h3>Background</h3>
+            <p>Planning a wedding involves dozens of moving parts, and many couples struggle to keep track of invitations, 
+                RSVPs, and guest details across multiple tools. Amorea was created to simplify this experience by offering 
+                a single place where couples can design their digital invitation, share it with guests, and manage responses 
+                effortlessly. Because the product was being built from the ground up, there was no existing structure, flow, 
+                or content model, everything needed to be defined, from the onboarding to the core interactions and the 
+                emotional tone of the experience.</p>
+            <h3>The Challenge</h3>
+            <p>The main challenge is designing a platform that feels simple, warm, and intuitive while the product itself 
+                is still taking shape. Because Amorea is being built feature by feature, the structure, flows, and content 
+                model need to remain flexible and scalable. Couples require clear guidance without feeling overwhelmed, and 
+                the experience must support both the emotional tone of a wedding journey and the practical complexity of 
+                guest management. With a very small team, just the developer and me, every decision must balance feasibility, 
+                clarity, and longn term growth. This means continuously refining the Information Architecture, shaping new 
+                flows as they emerge, and crafting microcopy that supports users through an evolving product.</p>
+        </section>
+
+        <!-- Goals & Responsibilities -->
+        <section class="section">
+            <h2>Goals & Responsibilities</h2>
+            <h3>Primary Goals</h3>
+            <ul>
+                <li>Define a simple, intuitive structure that supports couples through creating and sharing their digital invitation.</li>
+                <li>Shape an onboarding experience that feels warm, clear, and emotionally aligned with the wedding journey.</li>
+                <li>Establish core flows for invitation creation, guest management, and RSVP tracking as the product evolves.</li>
+                <li>Create interaction patterns and layouts that can scale as new features are added over time.</li>
+                <li>Craft microcopy that guides users gently, reduces friction, and reinforces the emotional tone of the product.</li>
+                <li>Build a flexible foundation that supports iterative development and long term growth.</li>
+            </ul>
+             <h3>Primary Goals</h3>
+            <ul>
+                <li>Designed the onboarding experience, including flow logic, layout, and emotionally supportive microcopy.</li>
+                <li>Defined and refined the core user flows for invitation creation, guest management, and RSVP tracking.</li>
+                <li>Shaped the Information Architecture and content model as new features emerged.</li>
+                <li>Created wireframes, prototypes, and interaction patterns to guide development.</li>
+                <li>Collaborated closely with the developer to align on feasibility, clarify interactions, and iterate quickly.</li>
+                <li>Provided continuous design support during implementation, answering questions, refining details, and ensuring the build matched the intended experience.</li>
+                <li>Adjusted flows and layouts as the product evolved, maintaining clarity and consistency across new features.</li>
+            </ul>
+        </section>
+
+
+        <!-- Information Architecture -->
+        <section class="section">
+            <h2>Information Architecture</h2>
+            <p>Amorea started without an existing structure, so the Information Architecture had to be defined from the ground up. 
+                Because the product is still evolving, the IA needs to remain flexible while giving users a clear, intuitive path 
+                through invitation creation, guest management, and RSVP tracking. My work has focused on establishing a foundation 
+                that supports both the emotional tone of a wedding platform and the practical tasks couples need to complete.
+                <br>I organized the core flows around the natural steps couples take, creating their invitation, customizing it, sharing 
+                it, and managing guest responses. <br><br>As new features are added, I continuously refine the hierarchy, naming, and grouping 
+                of content to keep the experience simple and predictable. This includes shaping the onboarding logic, defining how 
+                information is surfaced across screens, and ensuring that each new feature fits into a coherent structure rather 
+                than becoming an isolated add on.
+                Because the team is just the developer and me, IA decisions happen iteratively and collaboratively. Each new feature 
+                requires revisiting the structure, adjusting flows, and validating that the experience still feels clear, warm, and 
+                easy to navigate. The result is an IA that grows with the product while staying grounded in user needs and emotional clarity.</p>
+        </section>
+
+        <!-- Reflection -->
+        <section class="section">
+            <h2>Reflection</h2>
+            <p>Designing Amorea has been a reminder of how different it feels to build a product from the ground up, especially with such a 
+                small team. Because the platform is still evolving, I’ve had to stay flexible, constantly adjusting flows, refining the IA, 
+                and reshaping decisions as new needs appear. It’s taught me the value of designing for clarity even when the full picture 
+                isn’t defined yet, and how important it is to create foundations that can grow without becoming heavy or confusing.
+                <br><br>Working so closely with the developer has also reinforced how essential communication is in early stage products. 
+                Every feature requires alignment, negotiation, and quick iteration, and I’ve learned to balance emotional tone, 
+                usability, and feasibility in real time. As the product continues to grow, I’m becoming more intentional about documenting 
+                decisions, anticipating future complexity, and protecting the simplicity that makes Amorea feel warm and approachable.</p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-lg">
+            <p>&copy; Erandi M. | <a href="index.html">Back to Portfolio</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
