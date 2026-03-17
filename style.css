@@ -204,6 +204,10 @@ body {
     width: 100%;
 }
 
+body.menu-open {
+    overflow: hidden;
+}
+
 @media (min-width: 1400px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
         max-width: 1420px;
@@ -313,6 +317,7 @@ body {
     position: fixed;
     top: 2rem;
     right: 2rem;
+    left: auto;
     z-index: 9998;
     border-radius: 8px;
     display: flex !important;
@@ -561,6 +566,188 @@ body {
     .menu-link {
         font-size: 2rem;
     }
+    
+    /* Header and Navigation */
+    body {
+        overflow-x: hidden;
+    }
+    
+    .bg-dark-custom {
+        padding: 1rem !important;
+        margin: 1rem !important;
+    }
+    
+    /* Hero Section */
+    .hero-title {
+        font-size: 50px;
+    }
+    
+    /* Padding and Margins */
+    .container, .container-lg {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    .py-5 {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+    
+    .my-5 {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .p-4, .p-lg-5 {
+        padding: 1rem !important;
+    }
+    
+    .m-3, .m-lg-4 {
+        margin: 1rem !important;
+    }
+    
+    /* Sections */
+    .section {
+        padding: 2rem 0 !important;
+    }
+    
+    .section h2 {
+        font-size: 32px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .section h3 {
+        font-size: 20px;
+        margin: 1rem 0 0.75rem 0;
+    }
+    
+    .section p {
+        font-size: 16px;
+    }
+    
+    /* Cards and Layout */
+    .card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .card-custom {
+        margin-bottom: 1rem;
+    }
+    
+    .row {
+        gap: 1rem !important;
+    }
+    
+    /* Swiper Portfolio */
+    .swiper {
+        padding-bottom: 60px;
+    }
+    
+    .swiper-pagination {
+        bottom: 10px;
+    }
+    
+    .swiper-pagination-bullet {
+        width: 20px;
+        height: 20px;
+    }
+    
+    /* Menu Button */
+    .menu-toggle-btn {
+        top: 1rem;
+        left: 1rem;
+        right: auto;
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+    }
+    
+    .menu-toggle-btn span {
+        font-size: 12px;
+    }
+    
+    .menu-toggle-btn {
+        left: 1rem;
+        right: auto;
+    }
+    
+    .menu-toggle-btn i {
+        font-size: 18px;
+    }
+    
+    header nav {
+        margin-top: 4rem;
+    }
+    
+    /* Fullscreen Menu Mobile */
+    .fullscreen-menu-overlay {
+        overflow: hidden;
+        overflow-y: auto;
+    }
+    
+    .fullscreen-menu-overlay.active {
+        overflow-y: auto;
+    }
+    
+    .fullscreen-menu-overlay .container {
+        padding: 1rem;
+        max-width: 100%;
+    }
+    
+    .fullscreen-menu-nav ul {
+        gap: 1rem;
+    }
+    
+    .menu-link {
+        font-size: 2rem;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+    
+    /* About Section */
+    .banner-image {
+        margin-bottom: 2rem;
+    }
+    
+    /* Forms and Inputs */
+    .form-control-custom {
+        font-size: 16px;
+        padding: 0.75rem;
+    }
+    
+    /* Text Sizes */
+    .content-title {
+        font-size: 32px;
+        margin-bottom: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 18px;
+    }
+    
+    .date-text {
+        font-size: 12px;
+    }
+    
+    /* Gaps and Spacing */
+    .gap-4, .gap-3, .gap-2 {
+        gap: 1rem !important;
+    }
+    
+    .mb-5, .mb-4 {
+        margin-bottom: 1rem !important;
+    }
+    
+    .mt-5, .mt-4 {
+        margin-top: 1rem !important;
+    }
+    
+    .pt-2, .pt-3, .pt-4, .pt-5 {
+        padding-top: 0.5rem !important;
+    }
+    
+    .pb-2, .pb-3, .pb-4, .pb-5 {
+        padding-bottom: 0.5rem !important;
+    }
 }
 
 .close-menu-btn {
@@ -774,9 +961,21 @@ body {
 @media (max-width: 768px) {
     .banner-content {
         position: relative;
-        margin-top: 60px;
+        margin-top: 20px;
     }
+    
     .banner-image {
-        margin-top: 0;
+        margin-top: 0 !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    /* Ensure text is readable */
+    .banner-content .text-animation {
+        padding: 1rem !important;
+        font-size: 16px;
+    }
+    
+    .servicesSwiper {
+        padding-bottom: 50px;
     }
 }
