@@ -306,6 +306,7 @@ body.menu-open {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
+    text-decoration: none;
 }
 
 .menu-toggle-btn {
