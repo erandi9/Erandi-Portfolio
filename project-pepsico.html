@@ -233,6 +233,16 @@
             margin-top: 4rem;
             text-align: center;
             color: var(--text-light);
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
+
+        footer p {
+            margin: 0;
         }
 
         footer a {
@@ -275,6 +285,40 @@
         .social-icon:hover {
             transform: scale(1.2);
             color: var(--secondary-color);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--light-bg);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .scroll-to-top.show {
+            display: flex;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .scroll-to-top svg {
+            width: 24px;
+            height: 24px;
+            color: var(--text-dark);
         }
 
         /* Footer styles */
@@ -329,6 +373,9 @@
         <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-right" viewBox="0 0 24 24">
             <path fill="currentColor" d="M17.92 11.62a1 1 0 0 0-.21-.33l-5-5a1 1 0 0 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l5-5a1 1 0 0 0 .21-.33a1 1 0 0 0 0-.76Z" />
         </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-up" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 6a1 1 0 0 0-.33.21l-5 5a1 1 0 0 0 1.42 1.42L11 9.41V18a1 1 0 0 0 2 0V9.41l3.3 3.29a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-5-5A1 1 0 0 0 12 6Z" />
+        </symbol>
     </svg>
 
     <!-- Navigation -->
@@ -342,7 +389,7 @@
     <section class="hero-section">
         <div class="container-lg">
             <h1>PepsiCo</h1>
-            <p>Redesigned PepsiCo’s global intranet (myPepsiCo), a platform used by employees across multiple regions to access tools, content, and internal services.<br>
+            <p>Redesigned PepsiCo’s global intranet (myPepsiCo), a platform used by employees across multiple regions to access tools, content, and internal services.<br><br>
             The challenge was to simplify a fragmented and complex experience, improve navigation and findability, and create a scalable foundation for future growth. <br><br>
             Led UX efforts across information architecture, and cross platform design, while ensuring successful implementation within a highly complex enterprise 
             and Agile environment. 
@@ -537,12 +584,33 @@
     </div> -->
 
 
-    <footer style="width: 100%; margin-left: -8px; margin-right: -8px; padding-left: 3rem; padding-right: 3rem;">
-        <div>
-            <p>&copy; Erandi M. | <a href="index.html">Back to Portfolio</a></p>
-        </div>
+    <footer>
+        <p>&copy; Erandi M. | <a href="index.html">Back to Portfolio</a></p>
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#arrow-up"></use></svg>
+    </button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>

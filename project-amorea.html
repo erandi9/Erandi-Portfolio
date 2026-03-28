@@ -219,6 +219,41 @@
             transform: scale(1.02);
         }
 
+    
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--light-bg);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .scroll-to-top.show {
+            display: flex;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .scroll-to-top svg {
+            width: 24px;
+            height: 24px;
+            color: var(--text-dark);
+        }
+
         .full-width-image {
             width: 100%;
             border-radius: 20px;
@@ -233,6 +268,16 @@
             margin-top: 4rem;
             text-align: center;
             color: var(--text-light);
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
+
+        footer p {
+            margin: 0;
         }
 
         footer a {
@@ -243,6 +288,38 @@
 
         footer a:hover {
             text-decoration: underline;
+        }
+
+        /* Button */
+        .btn-custom {
+            background-color: #fdd052;
+            border: 2px solid var(--text-dark);
+            border-radius: 9px;
+            padding: 23px 47px;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-dark);
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+            color: var(--secondary-color);
         }
 
         /* Responsive */
@@ -262,6 +339,15 @@
     </style>
 </head>
 <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-right" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M17.92 11.62a1 1 0 0 0-.21-.33l-5-5a1 1 0 0 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l5-5a1 1 0 0 0 .21-.33a1 1 0 0 0 0-.76Z" />
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-up" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 6a1 1 0 0 0-.33.21l-5 5a1 1 0 0 0 1.42 1.42L11 9.41V18a1 1 0 0 0 2 0V9.41l3.3 3.29a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-5-5A1 1 0 0 0 12 6Z" />
+        </symbol>
+    </svg>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container-lg">
@@ -273,14 +359,126 @@
     <section class="hero-section">
         <div class="container-lg">
             <h1>Amorea</h1>
-            <p>Wedding invitation and guest management platform designed to help couples create, customize, and share their digital invitations with ease.</p>
+            <p>Amorea is a responsive web application designed to help couples manage wedding invitations and guest lists in a simple, organized, and stress free way.<br><br>
+            While the platform allows users to create and customize digital invitations, its core value lies in guest management, enabling couples to track RSVPs, monitor attendance in real time, and gain clear visibility into their event planning.<br><br>
+            The experience was designed to work seamlessly across both mobile and desktop, ensuring accessibility and usability regardless of device.</p>
+            <a href="#final-product" class="btn-custom" style="margin-top: 2rem;">
+                View Final Product
+                <svg class="social-icon" width="20" height="20"><use xlink:href="#arrow-right"></use></svg>
+            </a>
         </div>
     </section>
 
+    <div class="container-lg">
+    <section class="section">
+            <h2>Problem</h2>
+            <p>Planning a wedding is often overwhelming, especially when managing guest lists and RSVP responses.<br>
+            Couples face several challenges:</p>
+            <ul>
+                <li>Lack of visibility into who has confirmed attendance</li>
+                <li>Difficulty tracking responses across multiple channels (messages, calls, emails)</li>
+                <li>No centralized system to monitor guest status</li>
+                <li>Existing tools are either too complex or not designed with usability in mind</li>
+            </ul>
+            <p>This results in disorganized workflows, increased stress, and inefficient planning.</p>
+        </section>
+    </div>
+
+    <div class="container-lg">
+    <section class="section">
+            <h2>My Role</h2>
+            <p>UX/UI Designer responsible for the end to end product design.</p>
+            <ul>
+                <li>Led user research, persona creation, and journey mapping</li>
+                <li>Defined information architecture and navigation structure</li>
+                <li>Designed wireframes and high fidelity prototypes in Figma</li>
+                <li>Built a scalable design system aligned with development needs</li>
+                <li>Collaborated closely with the developer to ensure feasibility and efficient implementation</li>
+                <li>Designed the visual identity, including branding, color system, and typography</li>
+                <li>Currently developing the landing page using HTML and CSS</li>
+            </ul>
+        </section>
+    </div>
+
+ <div class="container-lg">
+    <section class="section">
+            <h2>Approach</h2>
+            <p>The design approach focused on simplifying a complex and stressful process into a clear, intuitive, and user-friendly experience.</p>
+            <ul>
+                <li>Conducted user research to understand behaviors, frustrations, and expectations during wedding planning</li>
+                <li>Created personas and journey maps to identify key pain points and opportunities</li>
+                <li>Designed a site map early in the process to define structure and navigation before moving into UI</li>
+                <li>Prioritized clarity, ease of use, and real time visibility across all features</li>
+            </ul>
+        </section>
+    </div>
+
+     <div class="container-lg">
+    <section class="section">
+            <h2>Key Decisions</h2>
+            <ul>
+                <li>Focused the product on guest management as the core value, rather than invitation creation</li>
+                <li>Designed real time RSVP tracking to give users immediate visibility into attendance</li>
+                <li>Created a dashboard style experience to surface key insights (confirmed, declined, pending)</li>
+                <li>Ensured the platform was fully responsive, optimizing the experience for both mobile and desktop</li>
+                <li>Built a scalable design system with reusable, responsive components to support future growth</li>
+                <li>Designed components with development in mind (React friendly), improving implementation efficiency</li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="container-lg">
+    <section class="section">
+            <h2>System & Scalability</h2>
+            <p>To support long term scalability, a comprehensive component library was developed early in the process.</p>
+            <ul>
+                <li>Created a reusable and consistent design system with no duplicated components</li>
+                <li>Ensured all components were responsive and adaptable across devices</li>
+                <li>Structured the system to align with React development, simplifying implementation</li>
+                <li>Reduced future design and development time by standardizing patterns and interactions</li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="container-lg">
+    <section class="section">
+            <h2>Solution</h2>
+            <p>Amorea provides couples with a centralized platform to:</p>
+            <ul>
+                <li>Create and send personalized digital invitations</li>
+                <li>Manage guest lists in a structured and organized way</li>
+                <li>Track RSVPs in real time</li>
+                <li>Visualize attendance through clear and actionable insights</li>
+                <li>Reduce manual work and uncertainty during wedding planning</li>
+            </ul>
+            <p>The result is a streamlined, intuitive experience that reduces stress and improves planning efficiency.</p>
+        </section>
+    </div>
+
+    <div class="container-lg">
+    <section class="section">
+            <h2>Impact</h2>
+            <ul>
+                <li>Simplified guest management by centralizing all RSVP data in one platform</li>
+                <li>Reduced uncertainty by providing real time visibility into attendance status</li>
+                <li>Improved usability through a clear and structured interface</li>
+                <li>Created a scalable foundation for future product expansion</li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="container-lg">
+    <section class="section">
+            <h2>Reflection</h2>
+            <p>This project highlighted the importance of focusing on the core user problem rather than surface-level features.<br>
+            While digital invitations are valuable, the real need lies in simplifying guest management and reducing stress during a complex life event.<br>Designing Amorea required balancing usability, emotional context, and technical scalability to create a meaningful and practical solution.</p>
+        </section>
+    </div>
+    
     <!-- Main Content -->
     <div class="container-lg">
         <!-- Final product & Interactive Showcase -->
-        <section class="section">
+        <section class="section" id="final-product">
             <h2>Final Product</h2>
             <div class="image-grid" style="grid-template-columns: 1fr; gap: 2.5rem;">
                 <img src="images/Amorea_Login.png" alt="Website Homepage" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);">
@@ -296,7 +494,7 @@
 
         </section>
 
-        <!-- Project Overview -->
+        <!-- Project Overview 
         <section class="section">
             <h2>Project Overview</h2>
             <div class="overview-grid">
@@ -323,7 +521,7 @@
         </section>
 
 
-        <!-- Context & Problem -->
+      
         <section class="section">
             <h2>Context & Problem</h2>
             <h3>Background</h3>
@@ -343,7 +541,7 @@
                 flows as they emerge, and crafting microcopy that supports users through an evolving product.</p>
         </section>
 
-        <!-- Goals & Responsibilities -->
+        
         <section class="section">
             <h2>Goals & Responsibilities</h2>
             <h3>Primary Goals</h3>
@@ -368,7 +566,7 @@
         </section>
 
 
-        <!-- Information Architecture -->
+        
         <section class="section">
             <h2>Information Architecture</h2>
             <p>Amorea started without an existing structure, so the Information Architecture had to be defined from the ground up. 
@@ -385,7 +583,7 @@
                 easy to navigate. The result is an IA that grows with the product while staying grounded in user needs and emotional clarity.</p>
         </section>
 
-        <!-- Reflection -->
+        
         <section class="section">
             <h2>Reflection</h2>
             <p>Designing Amorea has been a reminder of how different it feels to build a product from the ground up, especially with such a 
@@ -396,16 +594,37 @@
                 Every feature requires alignment, negotiation, and quick iteration, and I’ve learned to balance emotional tone, 
                 usability, and feasibility in real time. As the product continues to grow, I’m becoming more intentional about documenting 
                 decisions, anticipating future complexity, and protecting the simplicity that makes Amorea feel warm and approachable.</p>
-        </section>
+        </section> -->
     </div>
 
     <!-- Footer -->
     <footer>
-        <div class="container-lg">
-            <p>&copy; Erandi M. | <a href="index.html">Back to Portfolio</a></p>
-        </div>
+        <p>&copy; Erandi M. | <a href="index.html">Back to Portfolio</a></p>
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#arrow-up"></use></svg>
+    </button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>

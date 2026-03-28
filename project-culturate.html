@@ -300,6 +300,16 @@
             margin-top: 4rem;
             text-align: center;
             color: var(--text-light);
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
+
+        footer p {
+            margin: 0;
         }
 
         footer a {
@@ -310,6 +320,72 @@
 
         footer a:hover {
             text-decoration: underline;
+        }
+
+        /* Button */
+        .btn-custom {
+            background-color: #fdd052;
+            border: 2px solid var(--text-dark);
+            border-radius: 9px;
+            padding: 23px 47px;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-dark);
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+            color: var(--secondary-color);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--light-bg);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .scroll-to-top.show {
+            display: flex;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .scroll-to-top svg {
+            width: 24px;
+            height: 24px;
+            color: var(--text-dark);
         }
 
         /* Responsive */
@@ -329,6 +405,15 @@
     </style>
 </head>
 <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-right" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M17.92 11.62a1 1 0 0 0-.21-.33l-5-5a1 1 0 0 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l5-5a1 1 0 0 0 .21-.33a1 1 0 0 0 0-.76Z" />
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-up" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 6a1 1 0 0 0-.33.21l-5 5a1 1 0 0 0 1.42 1.42L11 9.41V18a1 1 0 0 0 2 0V9.41l3.3 3.29a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-5-5A1 1 0 0 0 12 6Z" />
+        </symbol>
+    </svg>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container-lg">
@@ -340,14 +425,131 @@
     <section class="hero-section">
         <div class="container-lg">
             <h1>CULTURATE</h1>
-            <p>Designing the digital infrastructure for a global cultural conference through innovative information architecture and user centric event experience.</p>
+            <p>CULTURATE is a mobile web application designed to help users discover museums across Buenos Aires, Argentina, and plan cultural experiences in a simple and accessible way.<br><br>
+            The platform centralizes museum information and allows users to explore options based on their interests, location, and availability without requiring account creation or upfront payment.<br><br>
+            The goal was to reduce friction in the discovery process and encourage users to engage with cultural experiences more easily.</p>
+            <a href="#final-product" class="btn-custom" style="margin-top: 2rem;">
+                View Final Product
+                <svg class="social-icon" width="20" height="20"><use xlink:href="#arrow-right"></use></svg>
+            </a>
         </div>
     </section>
+
+    <div class="container-lg">
+               <section class="section">
+            <h2>Problem</h2>
+            <p>Exploring cultural activities in a large city like Buenos Aires can be challenging:</p>
+            <ul>
+                <li>Information about museums is scattered across different sources</li>
+                <li>Users struggle to find options that match their interests or location</li>
+                <li>Existing platforms often require account creation or payment before users can explore</li>
+                <li>Lack of centralized, user friendly tools reduces engagement</li>
+            </ul>
+            <p>This creates friction in the discovery process and limits access to cultural experiences.</p>
+        </section> 
+    </div>
+
+    <div class="container-lg">
+               <section class="section">
+            <h2>My Role</h2>
+            <p>UX/UI Designer collaborating within a cross functional team.</p>
+            <ul>
+                <li>Worked alongside 2 UX designers, a developer, a marketing specialist, and a visual designer</li>
+                <li>Contributed to user research, ideation, and design decisions</li>
+                <li>Created wireframes and interactive prototypes in Figma</li>
+                <li>Participated in usability testing and iterative improvements</li>
+                <li>Collaborated using Notion to track tasks and ensure alignment across the team</li>
+            </ul>
+        </section> 
+    </div>
+
+        <div class="container-lg">
+               <section class="section">
+            <h2>Approach</h2>
+            <p>The team followed a user centered design process focused on reducing friction and improving accessibility.</p>
+            <ul>
+                <li>Defined requirements and aligned on product goals</li>
+                <li>Conducted user research to understand behaviors and expectations</li>
+                <li>Created personas and user journeys to identify pain points</li>
+                <li>Developed low, mid, and high fidelity prototypes</li>
+                <li>Conducted usability testing at each stage to validate decisions</li>
+            </ul>
+        </section> 
+    </div>
+
+    <div class="container-lg">
+               <section class="section">
+            <h2>Key Decisions</h2>
+            <ul>
+                <li>Removed mandatory onboarding to allow users to explore the platform immediately</li>
+                <li>Delayed monetization (ticket purchases) to reduce friction and build user trust</li>
+                <li>Designed multiple discovery paths:</li>
+                <ul>
+                    <li>Search</li>
+                    <li>Filters</li>
+                    <li>Category navigation</li>
+                    <li>Location based map</li>
+                </ul>
+                <li>Integrated geolocation to surface nearby museums and improve relevance</li>
+                <li>Included reviews and comments to support decision making</li>
+            </ul>
+        </section> 
+    </div>
+
+     <div class="container-lg">
+               <section class="section">
+            <h2>Solution</h2>
+            <p>The final product enables users to:</p>
+            <ul>
+                <li>Discover museums through multiple intuitive pathways</li>
+                <li>Explore options based on location, interests, and categories</li>
+                <li>View detailed information and user feedback</li>
+                <li>Save favorite museums and manage tickets (for registered users)</li>
+                <li>Navigate a seamless experience without unnecessary barriers</li>
+            </ul>
+            <p>The platform balances accessibility for new users with additional functionality for returning users.</p>
+        </section> 
+    </div>
+
+     <div class="container-lg">
+               <section class="section">
+            <h2>Validation & Iteration</h2>
+            <p>Usability testing was conducted across all stages of the design process.</p>
+            <ul>
+                <li>Tested low, mid, and high fidelity prototypes with multiple users</li>
+                <li>Identified usability issues and friction points early</li>
+                <li>Iterated designs based on real user feedback</li>
+                <li>Refined flows and interactions to improve clarity and usability</li>
+            </ul>
+            <p>The final high fidelity prototype was validated with users, resulting in a more intuitive and effective experience.</p>
+        </section> 
+    </div>
+
+    <div class="container-lg">
+               <section class="section">
+            <h2>Impact</h2>
+            <ul>
+                <li>Reduced barriers to entry by eliminating mandatory onboarding</li>
+                <li>Improved discoverability through multiple navigation paths</li>
+                <li>Increased usability through continuous testing and iteration</li>
+                <li>Created a flexible platform that supports both exploration and conversion</li>
+            </ul>
+        </section> 
+    </div>
+
+    <div class="container-lg">
+               <section class="section">
+            <h2>Reflection</h2>
+            <p>This project reinforced the value of collaboration and continuous validation.<br>
+            Working within a multidisciplinary team required clear communication, alignment, and shared ownership of decisions. 
+            Iterative testing played a key role in refining the experience and ensuring that the final solution addressed real user needs.</p>
+        </section> 
+    </div>
 
     <!-- Main Content -->
     <div class="container-lg">
         <!-- Final Designs - Platform Showcase -->
-        <section class="section">
+        <section class="section" id="final-product">
             <h2>Final Product</h2>
             
             <div class="image-collage">
@@ -362,7 +564,7 @@
             </div>
         </section>
 
-        <!-- Project Overview -->
+        <!-- Project Overview 
         <section class="section">
             <h2>Project Overview</h2>
             <div class="overview-grid">
@@ -385,7 +587,7 @@
             </div>
         </section>
 
-        <!-- Context & Problem -->
+       
         <section class="section">
             <h2>Context & Problem</h2>
             <h3>Background</h3>
@@ -404,7 +606,7 @@
                 Balancing clarity, depth, and scalability became central to shaping the UX strategy.</p>
         </section>
 
-        <!-- Goals & Responsibilities -->
+       
         <section class="section">
             <h2>Goals & Responsibilities</h2>
             <h3>Primary Goals</h3>
@@ -427,7 +629,7 @@
                 <li>Iterated on the design through testing and feedback, refining clarity, navigation, and overall usability.</li>
         </section>
 
-        <!-- Information Architecture -->
+       
         <section class="section">
             <h2>Information Architecture</h2>
             <p>CULTURATE required an Information Architecture that could organize a large and diverse set of museums while still feeling 
@@ -445,7 +647,7 @@
 
 
 
-        <!-- Reflection -->
+        
         <section class="section">
             <h2>Reflection</h2>
             <p>Working on CULTURATE showed me how essential it is to design for clarity when a product brings together a large amount of 
@@ -458,15 +660,36 @@
             validate assumptions early, and design with scalability in mind, knowing that new museums, categories, and features would continue 
             to expand the experience. This project strengthened my ability to create systems that feel simple on the surface but are 
             supported by thoughtful structure underneath, an approach that has become central to how I design complex, content rich products.</p>
-    </div>
+    </div> -->
 
     <!-- Footer -->
     <footer>
-        <div class="container-lg">
-            <p>&copy; Erandi M. | <a href="index.html">Back to Portfolio</a></p>
-        </div>
+        <p>&copy; Erandi M. | <a href="index.html">Back to Portfolio</a></p>
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#arrow-up"></use></svg>
+    </button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
