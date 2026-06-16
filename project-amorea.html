@@ -359,119 +359,161 @@
     <section class="hero-section">
         <div class="container-lg">
             <h1>Amorea</h1>
-            <p>Amorea is a responsive web application designed to help couples manage wedding invitations and guest lists in a simple, organized, and stress free way.<br><br>
-            While the platform allows users to create and customize digital invitations, its core value lies in guest management, enabling couples to track RSVPs, monitor attendance in real time, and gain clear visibility into their event planning.<br><br>
-            The experience was designed to work seamlessly across both mobile and desktop, ensuring accessibility and usability regardless of device.</p>
-            <a href="#final-product" class="btn-custom" style="margin-top: 2rem;">
+            <p>Amorea is a responsive web app that helps couples manage their wedding guest list 
+                and RSVPs without the spreadsheets, group chats, and guesswork. I designed it end 
+                to end, from research and product strategy through the design system and visual 
+                identity, and I'm currently building the landing page in HTML and CSS.</p>
+                <div class="container-lg">
+        <!-- Final product & Interactive Showcase -->
+        <section class="section" id="final-product">
+            <div class="image-grid" style="grid-template-columns: 1fr; gap: 2.5rem;">
+                <img src="images/Desktop_Mi boda.png" alt="Website Homepage" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);">
+            </div>
+        </section>
+            <!--<a href="#final-product" class="btn-custom" style="margin-top: 2rem;">
                 View Final Product
                 <svg class="social-icon" width="20" height="20"><use xlink:href="#arrow-right"></use></svg>
-            </a>
+            </a>-->
         </div>
     </section>
 
     <div class="container-lg">
     <section class="section">
-            <h2>Problem</h2>
-            <p>Planning a wedding is often overwhelming, especially when managing guest lists and RSVP responses.<br>
-            Couples face several challenges:</p>
-            <ul>
-                <li>Lack of visibility into who has confirmed attendance</li>
-                <li>Difficulty tracking responses across multiple channels (messages, calls, emails)</li>
-                <li>No centralized system to monitor guest status</li>
-                <li>Existing tools are either too complex or not designed with usability in mind</li>
-            </ul>
-            <p>This results in disorganized workflows, increased stress, and inefficient planning.</p>
+            <h2>The decision that defined Amorea</h2>
+            <p>When I started, the obvious product was "make beautiful digital invitations." 
+                But research kept surfacing the same frustration: couples weren't stressed about 
+                how invitations looked, they were stressed about not knowing who was actually coming. 
+                Responses were scattered across texts, calls, and emails, with no single source of truth.
+                So I made a deliberate call: invitation creation would be a feature, but guest management 
+                would be the core of the product. Every later decision, the dashboard, real time RSVP states, 
+                the information architecture, flowed from that one reframe.</p>
+
+            <div class="image-grid" style="grid-template-columns: 1fr; gap: 2.5rem;">
+                <img src="images/MariaGarcia_Journey_1500x1200.png" alt="Website Homepage" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);">
+            </div>
         </section>
     </div>
 
     <div class="container-lg">
     <section class="section">
-            <h2>My Role</h2>
-            <p>UX/UI Designer responsible for the end to end product design.</p>
-            <ul>
-                <li>Led user research, persona creation, and journey mapping</li>
-                <li>Defined information architecture and navigation structure</li>
-                <li>Designed wireframes and high fidelity prototypes in Figma</li>
-                <li>Built a scalable design system aligned with development needs</li>
-                <li>Collaborated closely with the developer to ensure feasibility and efficient implementation</li>
-                <li>Designed the visual identity, including branding, color system, and typography</li>
-                <li>Currently developing the landing page using HTML and CSS</li>
-            </ul>
+            <h2>How I got there</h2>
+            <p>I ran user research to understand how couples actually plan, 
+                then synthesized it into personas and a journey map to locate 
+                the sharpest pain points. Before touching UI, I mapped the full 
+                site structure so navigation reflected how couples think about their 
+                event, not how the data happens to be organized.</p>
+                <div class="image-grid" style="grid-template-columns: 1fr; gap: 2.5rem;">
+                <img src="images/IA.png" alt="Website Homepage" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);">
+            </div>
         </section>
     </div>
 
  <div class="container-lg">
     <section class="section">
-            <h2>Approach</h2>
-            <p>The design approach focused on simplifying a complex and stressful process into a clear, intuitive, and user friendly experience.</p>
+            <h2>Key decisions</h2>
             <ul>
-                <li>Conducted user research to understand behaviors, frustrations, and expectations during wedding planning</li>
-                <li>Created personas and journey maps to identify key pain points and opportunities</li>
-                <li>Designed a site map early in the process to define structure and navigation before moving into UI</li>
-                <li>Prioritized clarity, ease of use, and real time visibility across all features</li>
+                <li>Guest management as the core, not invitations. Focused the product on the real source of stress.</li>
+                <li>A dashboard that answers one question instantly: who's coming? Confirmed, declined, and pending surfaced at a glance.</li>
+                <li>Real time RSVP tracking so the picture is always current, with no manual tallying.</li>
+                <li>Responsive by default, designed to work as well on a phone the night before the wedding as on a laptop months ahead.</li>
             </ul>
         </section>
+        <div class="image-grid" style="grid-template-columns: 1fr; gap: 2.5rem;">
+        <img src="images/Destop_Mobile.png" alt="Website Homepage" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);">
+        </div>
     </div>
 
      <div class="container-lg">
     <section class="section">
-            <h2>Key Decisions</h2>
-            <ul>
-                <li>Focused the product on guest management as the core value, rather than invitation creation</li>
-                <li>Designed real time RSVP tracking to give users immediate visibility into attendance</li>
-                <li>Created a dashboard style experience to surface key insights (confirmed, declined, pending)</li>
-                <li>Ensured the platform was fully responsive, optimizing the experience for both mobile and desktop</li>
-                <li>Built a scalable design system with reusable, responsive components to support future growth</li>
-                <li>Designed components with development in mind (React friendly), improving implementation efficiency</li>
-            </ul>
+            <h2>A system built to scale</h2>
+            <p>I built Amorea's design system early, not as cleanup at the end. 
+                Components are reusable, responsive, and structured to map cleanly 
+                onto React, variants, states, and consistent patterns, so the same 
+                building blocks hold up as the product grows and so implementation 
+                stays efficient. No duplicated components, no one off screens.</p>
+        <div class="image-grid" style="grid-template-columns: 1fr; gap: 2.5rem;">
+        <img src="images/Design system.png" alt="Website Homepage" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);">
+        </div>
         </section>
     </div>
 
     <div class="container-lg">
     <section class="section">
-            <h2>System & Scalability</h2>
-            <p>To support long term scalability, a comprehensive component library was developed early in the process.</p>
-            <ul>
-                <li>Created a reusable and consistent design system with no duplicated components</li>
-                <li>Ensured all components were responsive and adaptable across devices</li>
-                <li>Structured the system to align with React development, simplifying implementation</li>
-                <li>Reduced future design and development time by standardizing patterns and interactions</li>
-            </ul>
+            <h2>Amorea assistant</h2>
+            <p>Couples don't want to log into a web app every time they wonder "who's still coming?" 
+                They want a quick answer on the phone that's already in their hand. So I extended 
+                Amorea with a WhatsApp assistant: a read only conversational layer that surfaces 
+                RSVP status, pending guests, reminders, and the wedding countdown through chat, 
+                then hands off to the dashboard for anything that changes data.
+                This wasn't a bolt on feature. It's a direct extension of Amorea's core insight: 
+                the real problem was never the invitation, it was visibility into who's coming. 
+                The assistant makes that visibility ambient.</p>
+                <div class="image-grid" style="grid-template-columns: 1fr; gap: 2.5rem;">
+        <img src="images/CX.png" alt="Website Homepage" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);">
+        </div>
+        <h3>Designing the assistant's behavior, not just its screens</h3>
+        <p>The hardest part of conversational design isn't the UI, 
+            it's defining how the assistant thinks. I authored a full 
+            system prompt that specifies its identity, scope, tone, data access, 
+            and action authority. Some of the decisions I made:</p>
+                <ul>
+                    <li>A strict scope boundary: The assistant helps with guest management and
+                        nothing else. It won't discuss venues, vendors, or budgets, 
+                        and it says so warmly instead of dead ending. Defining what a 
+                        product refuses to do is as important as what it does.</li>
+                    <li>A read only model with a clear handoff: The assistant can read 
+                        and summarize, but every action that changes data (sending a reminder, 
+                        editing a guest, resending an invitation) routes to the dashboard. 
+                        I formalized this as an action authority matrix: complete in chat, 
+                        initiate in chat and finish in app, or never execute and always redirect.</li>
+                    <li>A defined voice with hard rules: Warm but not a cheerleader, 
+                        elegant but casual for the channel. Exclamation marks reserved for genuine milestones. 
+                        No dashes as connectors, because they make a message read as machine generated.</li>
+                </ul>
+
+                <div class="image-grid" style="grid-template-columns: 1fr; gap: 2.5rem;">
+        <img src="images/Dos and donts.png" alt="Website Homepage" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);">
+        </div>
+        </section>
+
+        <section class="section">
+            <h2>A system built to scale</h2>
+            <p>The assistant is honest about its limits, and the design turns those limits into a feature. 
+                When a couple asks for something it can't do in chat, it acknowledges the request, 
+                explains what it can do, and offers the relevant dashboard link. The five interaction 
+                patterns map this end to end: the happy path that informs and closes, the proactive 
+                nudge with conditional reminder logic, the out of scope repair, the conversation to UI 
+                bridge where the channel handoff begins, and the connected state with an easy exit.</p>
+        <div class="image-grid" style="grid-template-columns: 1fr; gap: 2.5rem;">
+        <img src="images/tres y cuatro.png" alt="Website Homepage" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);">
+        </div>
+        <p>Designing the conversational layer meant thinking like a product owner, not just a screen designer: 
+            scope, data permissions, escalation paths, voice, and edge cases. It's the part of this project I'm
+             proudest of, because it shows design decisions that live in behavior.</p>
         </section>
     </div>
 
     <div class="container-lg">
     <section class="section">
-            <h2>Solution</h2>
-            <p>Amorea provides couples with a centralized platform to:</p>
-            <ul>
-                <li>Create and send personalized digital invitations</li>
-                <li>Manage guest lists in a structured and organized way</li>
-                <li>Track RSVPs in real time</li>
-                <li>Visualize attendance through clear and actionable insights</li>
-                <li>Reduce manual work and uncertainty during wedding planning</li>
-            </ul>
-            <p>The result is a streamlined, intuitive experience that reduces stress and improves planning efficiency.</p>
-        </section>
-    </div>
+            <h2>The result</h2>
+            <p>Amorea gives couples one place to manage guests, 
+            track responses as they come in, and see their attendance 
+            picture clearly, replacing scattered messages and mental 
+            math with a calm, organized view.</p>
 
-    <div class="container-lg">
-    <section class="section">
-            <h2>Impact</h2>
+            <h2>What it delivered</h2>
             <ul>
-                <li>Simplified guest management by centralizing all RSVP data in one platform</li>
-                <li>Reduced uncertainty by providing real time visibility into attendance status</li>
-                <li>Improved usability through a clear and structured interface</li>
-                <li>Created a scalable foundation for future product expansion</li>
+                <li>Designed 35+ screens across the full flow, from invitation through RSVP dashboard.</li>
+                <li>Built a reusable system of 70+ components with zero duplication, cutting future design and build time.</li>
+                <li>Handled distinct RSVP states (confirmed, declined, pending, no response) in one clear view.</li>
             </ul>
-        </section>
-    </div>
-
-    <div class="container-lg">
-    <section class="section">
-            <h2>Reflection</h2>
-            <p>This project highlighted the importance of focusing on the core user problem rather than surface level features.<br>
-            While digital invitations are valuable, the real need lies in simplifying guest management and reducing stress during a complex life event.<br>Designing Amorea required balancing usability, emotional context, and technical scalability to create a meaningful and practical solution.</p>
+            <h2>What I took away</h2>
+            <p>The strongest design move on this project wasn't a screen, it was deciding what not 
+                to build. Letting research override the obvious "pretty invitations" framing, 
+                and committing to guest management as the core, made the whole product clearer. 
+                It reminded me that good product design is as much about narrowing focus as adding 
+                features, and that balancing usability, emotional context, and technical scalability 
+                is what turns a nice idea into something real.</p>
         </section>
     </div>
     
