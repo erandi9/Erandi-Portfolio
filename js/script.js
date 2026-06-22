@@ -123,12 +123,12 @@
       //   disableOnInteraction: false,
       // },
       pagination: {
-        el: '.swiper-pagination',
+        el: '.worksSwiper .swiper-pagination',
         clickable: true,
       },
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.worksSwiper .swiper-button-next',
+        prevEl: '.worksSwiper .swiper-button-prev',
       },
       breakpoints: {
         300: {

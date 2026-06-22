@@ -455,6 +455,68 @@ body.menu-open {
     font-size: 20px;
 }
 
+/* Works swiper specific adjustments */
+.worksSwiper {
+    position: relative;
+    padding-bottom: 70px;
+}
+
+/* Note: visual cue implemented via the actual navigation buttons; removed extra pseudo-element to avoid duplicates */
+
+/* Center pagination dots below the cards (section center) */
+.worksSwiper .swiper-pagination {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    z-index: 6;
+}
+
+.worksSwiper .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: rgba(65,76,49,0.25);
+    opacity: 1;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.worksSwiper .swiper-pagination-bullet-active {
+    background: var(--primary-color);
+    width: 14px;
+    height: 14px;
+}
+
+/* Style left and right swiper nav in the works section as circular yellow buttons */
+.worksSwiper .swiper-button-prev,
+.worksSwiper .swiper-button-next {
+    width: 48px;
+    height: 48px;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(65,76,49,0.12);
+    z-index: 7;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.worksSwiper .swiper-button-prev { left: 12px; }
+.worksSwiper .swiper-button-next { right: 12px; }
+
+.worksSwiper .swiper-button-prev::after,
+.worksSwiper .swiper-button-next::after {
+    color: var(--primary-color);
+    font-size: 18px;
+}
+
 @media (max-width: 1199.98px) {
     .section-title {
         font-size: 120px;

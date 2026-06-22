@@ -1,695 +1,443 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CULTURATE Project - Erandi M. Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CULTURATE Project - Erandi M. Portfolio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
 
-        :root {
-            --primary-color: #414c31;
-            --secondary-color: #f9c32c;
-            --light-bg: #fcf5e1;
-            --text-dark: #37342e;
-            --text-light: #fdf5e1;
-        }
+  :root {
+    --cream: #FAF7F2;
+    --cream-deep: #F1EBE0;
+    --ink: #1C1A17;
+    --ink-soft: #57534A;
+    --ink-faint: #A39C8F;
+    --rule: #E3DCCD;
+    --coral: #A8451F;
+    --coral-soft: #F2DFD3;
+    --teal: #2F5D4F;
+    --teal-soft: #DDE9E2;
+    --max: 760px;
+  }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #fafafa;
-            color: #333;
-            line-height: 1.8;
-        }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
 
-        /* Header Navigation */
-        .navbar {
-            background-color: #fff;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            padding: 1.5rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
 
-        .navbar-brand {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color) !important;
-            letter-spacing: -0.5px;
-            text-decoration: none;
-        }
+  a { color: var(--coral); text-decoration: none; border-bottom: 1px solid currentColor; }
+  a:hover { opacity: 0.7; }
 
-        .navbar-brand:hover {
-            color: var(--secondary-color) !important;
-        }
+  .topnav { padding: 28px 32px; max-width: var(--max); margin: 0 auto; }
+  .topnav a { border: none; font-size: 14px; color: var(--ink-soft); letter-spacing: 0.02em; }
+  .topnav a:hover { color: var(--coral); opacity: 1; }
 
-        /* Hero Section */
-        .hero-section {
-            padding: 5rem 0;
-            background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%);
-        }
+  header.hero { max-width: var(--max); margin: 0 auto; padding: 24px 32px 0; }
 
-        .hero-section h1 {
-            font-family: 'Syne', sans-serif;
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-            letter-spacing: -1px;
-        }
+  .eyebrow {
+    font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--coral); font-weight: 600; margin-bottom: 18px;
+  }
 
-        .hero-section p {
-            font-size: 1.25rem;
-            color: #666;
-            margin-bottom: 0;
-            max-width: 600px;
-            font-weight: 400;
-        }
+  h1.title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 9vw, 84px);
+    font-weight: 500; line-height: 0.95;
+    margin: 0 0 6px; letter-spacing: -0.01em;
+  }
 
-        /* Impact Snapshot Card */
-        .impact-snapshot {
-            background: #fff;
-            border-radius: 24px;
-            padding: 2.5rem;
-            margin: 4rem 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            border-left: 6px solid var(--secondary-color);
-        }
+  .subtitle {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 20px; color: var(--ink-soft); font-weight: 400;
+    margin: 0 0 32px;
+  }
 
-        .impact-snapshot h3 {
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--primary-color);
-            margin-bottom: 2rem;
-        }
+  .role-line {
+    display: flex; flex-wrap: wrap; gap: 8px 28px;
+    padding: 20px 0 28px; border-top: 1px solid var(--rule);
+    margin-bottom: 36px; font-size: 14px; color: var(--ink-soft);
+  }
+  .role-line strong { color: var(--ink); font-weight: 600; }
 
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
+  .intro {
+    font-size: 19px; line-height: 1.65; color: var(--ink-soft);
+    margin-bottom: 40px; max-width: 680px;
+  }
 
-        .impact-item {
-            text-align: center;
-        }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+  .badge {
+    font-size: 12.5px; font-weight: 600; letter-spacing: 0.03em;
+    padding: 6px 13px; border-radius: 100px;
+    background: var(--coral-soft); color: var(--coral);
+  }
+  .badge.alt { background: var(--teal-soft); color: var(--teal); }
 
-        .impact-item h4 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
-        }
+  .hero-img-wrap { max-width: 1040px; margin: 0 auto; padding: 0 32px; }
+  .hero-img {
+    width: 100%; border-radius: 18px; overflow: hidden;
+    border: 1px solid var(--rule); background: var(--cream-deep);
+  }
+  .hero-img img { width: 100%; height: auto; display: block; }
 
-        .impact-item p {
-            font-size: 0.95rem;
-            color: #666;
-            font-weight: 500;
-        }
+  main { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
 
-        /* Overview Grid */
-        .overview-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
-            margin: 3rem 0;
-        }
+  section { padding: 76px 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: none; }
 
-        .overview-card {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 4px solid var(--secondary-color);
-        }
+  .section-label {
+    font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink-faint); font-weight: 600; margin-bottom: 14px;
+  }
 
-        .overview-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-        }
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 500; line-height: 1.15;
+    margin: 0 0 22px; max-width: 600px;
+  }
 
-        .overview-card h4 {
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
+  h3.sub-h { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 500; margin: 36px 0 14px; }
 
-        .overview-card p {
-            font-size: 1.1rem;
-            color: #333;
-            line-height: 1.6;
-            font-weight: 500;
-        }
+  p { margin: 0 0 18px; color: var(--ink); }
+  p.lede { font-size: 18px; color: var(--ink-soft); }
 
-        /* Section Styling */
-        .section {
-            padding: 4rem 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
+  .pull {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 23px; line-height: 1.5; color: var(--coral);
+    margin: 28px 0; padding-left: 22px; border-left: 2px solid var(--coral);
+  }
 
-        .section:last-child {
-            border-bottom: none;
-        }
+  ul.decisions { list-style: none; padding: 0; margin: 24px 0; }
+  ul.decisions li {
+    padding: 18px 0; border-top: 1px solid var(--rule);
+    display: grid; grid-template-columns: 28px 1fr; gap: 14px;
+  }
+  ul.decisions li:last-child { border-bottom: 1px solid var(--rule); }
+  ul.decisions .mark { color: var(--coral); font-size: 18px; line-height: 1.5; }
+  ul.decisions strong { display: block; margin-bottom: 4px; }
+  ul.decisions span.body { color: var(--ink-soft); font-size: 15.5px; }
 
-        .section h2 {
-            font-family: 'Syne', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 2rem;
-            color: var(--primary-color);
-            letter-spacing: -0.5px;
-        }
+  .team-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 14px; margin: 26px 0;
+  }
+  .team-card {
+    border: 1px solid var(--rule); border-radius: 12px; padding: 16px 16px;
+    background: var(--cream-deep);
+  }
+  .team-card .role { font-weight: 600; font-size: 14.5px; color: var(--ink); margin-bottom: 2px; }
+  .team-card .count { font-size: 13px; color: var(--ink-faint); }
+  .team-card.you { background: var(--coral-soft); border-color: var(--coral); }
+  .team-card.you .role { color: var(--coral); }
 
-        .section h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 2rem 0 1rem 0;
-            color: #333;
-        }
+  .process-steps { list-style: none; padding: 0; margin: 26px 0; counter-reset: step; }
+  .process-steps li {
+    counter-increment: step;
+    padding: 16px 0 16px 44px;
+    border-top: 1px solid var(--rule);
+    position: relative;
+    color: var(--ink-soft);
+    font-size: 15.5px;
+  }
+  .process-steps li:last-child { border-bottom: 1px solid var(--rule); }
+  .process-steps li::before {
+    content: counter(step);
+    position: absolute; left: 0; top: 14px;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--ink); color: var(--cream);
+    font-family: 'Fraunces', serif; font-size: 13px; font-weight: 500;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .process-steps strong { color: var(--ink); }
 
-        .section p {
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
+  figure { margin: 36px 0; }
+  figure img { width: 100%; border-radius: 14px; border: 1px solid var(--rule); display: block; }
+  figcaption { font-size: 13.5px; color: var(--ink-faint); margin-top: 10px; text-align: center; }
 
-        .section ul {
-            font-size: 1.1rem;
-            color: #555;
-            margin-left: 2rem;
-            margin-bottom: 1.5rem;
-        }
+  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 36px 0; }
+  .gallery-grid img { width: 100%; border-radius: 12px; border: 1px solid var(--rule); display: block; }
+  @media (max-width: 640px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
 
-        .section li {
-            margin-bottom: 0.8rem;
-            line-height: 1.8;
-        }
+  .callout {
+    background: var(--teal-soft); border-radius: 14px; padding: 26px 28px; margin: 30px 0;
+  }
+  .callout .section-label { color: var(--teal); margin-bottom: 8px; }
+  .callout p { color: #1F3D33; margin-bottom: 0; font-size: 15.5px; }
 
-        /* Image Grid */
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
+  .metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 28px 0 8px; }
+  @media (max-width: 640px) { .metrics-grid { grid-template-columns: 1fr; } }
+  .metric .num {
+    font-family: 'Fraunces', serif; font-size: 40px; font-weight: 500;
+    color: var(--coral); line-height: 1; margin-bottom: 8px;
+  }
+  .metric .label { font-size: 14.5px; color: var(--ink-soft); line-height: 1.45; }
 
-        .image-grid img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
+  footer {
+    max-width: var(--max); margin: 0 auto; padding: 50px 32px 70px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 14px; color: var(--ink-faint);
+  }
+  footer a { color: var(--ink-soft); border: none; }
 
-        .image-grid img:hover {
-            transform: scale(1.02);
-        }
-
-        /* Image Collage - 2 rows of 4 images */
-        .image-collage {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .image-collage img {
-            width: 100%;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            object-fit: cover;
-        }
-
-        .image-collage img:hover {
-            transform: scale(1.02);
-        }
-
-        .image-collage img:nth-child(1) {
-            grid-column: span 1;
-            grid-row: span 1;
-        }
-
-        .image-collage img:nth-child(2) {
-            grid-column: span 1;
-            grid-row: span 1;
-        }
-
-        .image-collage img:nth-child(3) {
-            grid-column: span 1;
-            grid-row: span 1;
-        }
-
-        .image-collage img:nth-child(4) {
-            grid-column: span 1;
-            grid-row: span 1;
-        }
-
-        .image-collage img:nth-child(5) {
-            grid-column: span 1;
-            grid-row: span 1;
-        }
-
-        .image-collage img:nth-child(6) {
-            grid-column: span 1;
-            grid-row: span 1;
-        }
-
-        .image-collage img:nth-child(7) {
-            grid-column: span 1;
-            grid-row: span 1;
-        }
-
-        .image-collage img:nth-child(8) {
-            grid-column: span 1;
-            grid-row: span 1;
-        }
-
-        @media (max-width: 768px) {
-            .image-collage {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .full-width-image {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            margin: 2rem 0;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--primary-color);
-            padding: 3rem 0;
-            margin-top: 4rem;
-            text-align: center;
-            color: var(--text-light);
-            width: 100vw;
-            position: relative;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        footer a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Button */
-        .btn-custom {
-            background-color: #fdd052;
-            border: 2px solid var(--text-dark);
-            border-radius: 9px;
-            padding: 23px 47px;
-            font-weight: 700;
-            font-size: 18px;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-            color: var(--text-dark);
-        }
-
-        .btn-custom:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .social-icon {
-            width: 24px;
-            height: 24px;
-            transition: all 0.3s ease;
-        }
-
-        .social-icon:hover {
-            transform: scale(1.2);
-            color: var(--secondary-color);
-        }
-
-        /* Scroll to Top Button */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 50px;
-            height: 50px;
-            background-color: var(--light-bg);
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s ease;
-            z-index: 999;
-        }
-
-        .scroll-to-top.show {
-            display: flex;
-        }
-
-        .scroll-to-top:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .scroll-to-top svg {
-            width: 24px;
-            height: 24px;
-            color: var(--text-dark);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-section h1 {
-                font-size: 2.5rem;
-            }
-
-            .section h2 {
-                font-size: 2rem;
-            }
-
-            .overview-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  @media (max-width: 640px) {
+    section { padding: 56px 0; }
+    .role-line { gap: 8px 18px; }
+  }
+</style>
 </head>
 <body>
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-right" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M17.92 11.62a1 1 0 0 0-.21-.33l-5-5a1 1 0 0 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l5-5a1 1 0 0 0 .21-.33a1 1 0 0 0 0-.76Z" />
-        </symbol>
-        <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-up" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M12 6a1 1 0 0 0-.33.21l-5 5a1 1 0 0 0 1.42 1.42L11 9.41V18a1 1 0 0 0 2 0V9.41l3.3 3.29a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-5-5A1 1 0 0 0 12 6Z" />
-        </symbol>
-    </svg>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container-lg">
-            <a class="navbar-brand" href="index.html"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+<nav class="topnav">
+  <a href="index.html">&larr; Back to Portfolio</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow">Case study &middot; Mobile Web App &middot; UX/UI Design</div>
+  <h1 class="title">CULTURATE</h1>
+  <p class="subtitle">Discovering museums in Buenos Aires, without the friction of an account or a paywall.</p>
+
+  <div class="role-line">
+    <span><strong>Role</strong> &nbsp;UX/UI Designer Jr., cross functional team of 5</span>
+    <span><strong>Platform</strong> &nbsp;Mobile web</span>
+    <span><strong>Scope</strong> &nbsp;Research, wireframes, prototyping, usability testing</span>
+  </div>
+
+  <p class="intro">CULTURATE is a mobile web application designed to help users discover museums across Buenos Aires, Argentina, and plan cultural experiences in a simple, 
+    accessible way. The platform centralizes museum information and lets users explore by interest, location, and availability, with no account creation and no upfront payment required to start exploring.</p>
+
+  <div class="badge-row">
+    <span class="badge">My first UX/UI project</span>
+    <span class="badge alt">Team based in Argentina</span>
+  </div>
+</header>
+
+<div class="hero-img-wrap">
+  <div class="hero-img"><img src="images/culturate/desktop.png" alt="Culturate mobile homepage"></div>
+</div>
+
+<main>
+
+  <!-- CONTEXT / FIRST PROJECT -->
+  <section>
+    <div class="section-label">Where this fits in my path</div>
+    <h2>The project that taught me how UX actually gets made</h2>
+    <p class="lede">CULTURATE was my first project as a UX/UI designer, working remotely with a cross functional team based in Argentina.</p>
+    <p>I came into this still early in the field, with the instincts but not yet the scar tissue of having shipped something with a real team. What I left with was a much clearer 
+      sense of how research, ideation, and design actually move through a group rather than through one person's head, how decisions get proposed, challenged, tested, and revised when five different roles all have a stake in the outcome.</p>
+    <p>It's also the project where I first learned that the most valuable design decisions are often about removing things, not adding them, a lesson that's shown up in every project I've worked on since.</p>
+  </section>
+
+  <!-- PROBLEM -->
+  <section>
+    <div class="section-label">Problem</div>
+    <h2>Exploring culture in a big city shouldn't require an account</h2>
+    <p>Exploring cultural activities in a large city like Buenos Aires can be genuinely difficult. Information about museums is scattered across different sources. Users struggle to 
+      find options that match their interests or location. Existing platforms often require account creation or payment before someone can even explore. The lack of centralized, user friendly tools reduces engagement before it has a chance to start.</p>
+    <div class="pull">This creates friction in the discovery process and limits access to cultural experiences, before a user has even decided if they're interested.</div>
+  </section>
+
+  <!-- MY ROLE / TEAM -->
+  <section>
+    <div class="section-label">My role</div>
+    <h2>One voice in a five person team</h2>
+    <p>I worked as a UX/UI Designer collaborating within a cross functional team, contributing to user research, ideation, and design decisions, not owning the product alone, but learning to hold a point of view inside a group that had to align on every call.</p>
+    <div class="team-grid">
+      <div class="team-card you"><div class="role">Me</div><div class="count">Jr. UX/UI Designer</div></div>
+      <div class="team-card"><div class="role">UX Designers</div><div class="count">&times;2</div></div>
+      <div class="team-card"><div class="role">Developer</div><div class="count">&times;1</div></div>
+      <div class="team-card"><div class="role">Marketing specialist</div><div class="count">&times;1</div></div>
+      <div class="team-card"><div class="role">Visual designer</div><div class="count">&times;1</div></div>
+    </div>
+    <ul class="decisions">
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Created wireframes and interactive prototypes in Figma.</strong>
+          <span class="body">From low fidelity through high fidelity, in step with the rest of the team's research and validation work.</span>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container-lg">
-            <h1>CULTURATE</h1>
-            <p>CULTURATE is a mobile web application designed to help users discover museums across Buenos Aires, Argentina, and plan cultural experiences in a simple and accessible way.<br><br>
-            The platform centralizes museum information and allows users to explore options based on their interests, location, and availability without requiring account creation or upfront payment.<br><br>
-            The goal was to reduce friction in the discovery process and encourage users to engage with cultural experiences more easily.</p>
-            <a href="#final-product" class="btn-custom" style="margin-top: 2rem;">
-                View Final Product
-                <svg class="social-icon" width="20" height="20"><use xlink:href="#arrow-right"></use></svg>
-            </a>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Participated in usability testing and iterative improvements.</strong>
+          <span class="body">Sat in on sessions, took findings back into the work, and revised flows based on what users actually did, not just what they said.</span>
         </div>
-    </section>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Collaborated using Notion to track tasks and ensure alignment.</strong>
+          <span class="body">Working asynchronously across a remote team meant decisions had to be visible and traceable, not just discussed once and forgotten.</span>
+        </div>
+      </li>
+    </ul>
+  </section>
 
-    <div class="container-lg">
-               <section class="section">
-            <h2>Problem</h2>
-            <p>Exploring cultural activities in a large city like Buenos Aires can be challenging:</p>
-            <ul>
-                <li>Information about museums is scattered across different sources</li>
-                <li>Users struggle to find options that match their interests or location</li>
-                <li>Existing platforms often require account creation or payment before users can explore</li>
-                <li>Lack of centralized, user friendly tools reduces engagement</li>
-            </ul>
-            <p>This creates friction in the discovery process and limits access to cultural experiences.</p>
-        </section> 
+  <!-- APPROACH -->
+  <section>
+    <div class="section-label">Approach</div>
+    <h2>A user centered process, end to end</h2>
+    <p>The team followed a user centered design process focused on reducing friction and improving accessibility.</p>
+    <ol class="process-steps">
+      <li><strong>Defined requirements</strong> and aligned on product goals as a team.</li>
+      <li><strong>Conducted user research</strong> to understand behaviors and expectations around cultural discovery.</li>
+      <li><strong>Created personas and user journeys</strong> to identify where the real pain points were.</li>
+      <li><strong>Developed low, mid, and high fidelity prototypes</strong>, building up fidelity deliberately rather than jumping straight to polish.</li>
+      <li><strong>Conducted usability testing at each stage</strong> to validate decisions before moving forward.</li>
+    </ol>
+  </section>
+
+  <!-- KEY DECISIONS -->
+  <section>
+    <div class="section-label">Key decisions</div>
+    <h2>Removing barriers was the strategy, not a single feature</h2>
+    <ul class="decisions">
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Removed mandatory onboarding.</strong>
+          <span class="body">Users can explore the platform immediately, with no account wall between them and the content they came for.</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Delayed monetization.</strong>
+          <span class="body">Ticket purchases were pushed later in the flow to reduce friction and build user trust before asking for anything in return.</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Designed multiple discovery paths.</strong>
+          <span class="body">Search, filters, category navigation, and a location-based map, because people don't all arrive at "what should I do today" the same way.</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Integrated geolocation.</strong>
+          <span class="body">Surfaced nearby museums automatically to improve relevance without requiring the user to type anything.</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Included reviews and comments.</strong>
+          <span class="body">Gave users social proof to support their decision making, the same way they'd evaluate any other outing.</span>
+        </div>
+      </li>
+    </ul>
+    <div class="callout">
+      <div class="section-label">The throughline</div>
+      <p>Every key decision on this project removed a barrier, an account, a payment, a single rigid path to discovery. None of them added a feature for its own sake.</p>
     </div>
+  </section>
 
-    <div class="container-lg">
-               <section class="section">
-            <h2>My Role</h2>
-            <p>UX/UI Designer collaborating within a cross functional team.</p>
-            <ul>
-                <li>Worked alongside 2 UX designers, a developer, a marketing specialist, and a visual designer</li>
-                <li>Contributed to user research, ideation, and design decisions</li>
-                <li>Created wireframes and interactive prototypes in Figma</li>
-                <li>Participated in usability testing and iterative improvements</li>
-                <li>Collaborated using Notion to track tasks and ensure alignment across the team</li>
-            </ul>
-        </section> 
+  <!-- SOLUTION -->
+  <section>
+    <div class="section-label">Solution</div>
+    <h2>A platform that scales with how invested a user already is</h2>
+    <p>The final product enables users to discover museums through multiple intuitive pathways, explore options based on location, interests, and categories, view detailed information and user feedback, save favorite museums and manage tickets as registered users, and move through the experience without unnecessary barriers.</p>
+    <p>The platform balances accessibility for new users with additional functionality for returning users, nobody has to commit before they're ready, but the product has more to offer once they are.</p>
+  </section>
+
+  <!-- VALIDATION -->
+  <section>
+    <div class="section-label">Validation &amp; iteration</div>
+    <h2>Tested at every fidelity, not just at the end</h2>
+    <p>Usability testing was conducted across all stages of the design process, low, mid, and high fidelity prototypes were each tested with multiple users. That cadence let the team identify usability issues and friction points early, while they were still cheap to fix, and iterate designs based on real user feedback rather than internal assumptions.</p>
+    <p>The final high fidelity prototype was validated with users, resulting in a more intuitive and effective experience than the early concepts had produced.</p>
+  </section>
+
+  <!-- IMPACT -->
+  <section>
+    <div class="section-label">Impact</div>
+    <div class="metrics-grid">
+      <div class="metric">
+        <div class="num">0</div>
+        <div class="label">mandatory steps before a new user can start exploring museums</div>
+      </div>
+      <div class="metric">
+        <div class="num">4</div>
+        <div class="label">distinct discovery paths, search, filters, categories, and map, for different ways people decide what to do</div>
+      </div>
+      <div class="metric">
+        <div class="num">3</div>
+        <div class="label">fidelity stages, each independently usability tested before moving forward</div>
+      </div>
     </div>
+    <ul class="decisions" style="margin-top:30px;">
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Reduced barriers to entry</strong>
+          <span class="body">by eliminating mandatory onboarding entirely.</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Improved discoverability</strong>
+          <span class="body">through multiple navigation paths instead of one rigid funnel.</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Increased usability</strong>
+          <span class="body">through continuous testing and iteration at every fidelity stage.</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Created a flexible platform</strong>
+          <span class="body">that supports both casual exploration and eventual conversion.</span>
+        </div>
+      </li>
+    </ul>
+  </section>
 
-        <div class="container-lg">
-               <section class="section">
-            <h2>Approach</h2>
-            <p>The team followed a user centered design process focused on reducing friction and improving accessibility.</p>
-            <ul>
-                <li>Defined requirements and aligned on product goals</li>
-                <li>Conducted user research to understand behaviors and expectations</li>
-                <li>Created personas and user journeys to identify pain points</li>
-                <li>Developed low, mid, and high fidelity prototypes</li>
-                <li>Conducted usability testing at each stage to validate decisions</li>
-            </ul>
-        </section> 
+  <!-- REFLECTION -->
+  <section>
+    <div class="section-label">What I took away</div>
+    <h2>Collaboration and validation, learned firsthand</h2>
+    <p>This project reinforced the value of collaboration and continuous validation. Working within a multidisciplinary team required clear communication, alignment, and shared ownership of decisions, nothing shipped because one person decided it should.</p>
+    <p>Iterative testing played a key role in refining the experience and ensuring the final solution addressed real user needs. As a first project, it set the standard I've tried to hold myself to since: research before assumptions, testing before certainty, and removing friction before adding features.</p>
+  </section>
+
+  <!-- GALLERY -->
+  <section>
+    <div class="section-label">Final product</div>
+    <h2>Selected screens</h2>
+    <div class="gallery-grid">
+      <img src="images/Culturate/Home.png" alt="Culturate mobile homepage">
+      <img src="images/Culturate/Pills.png" alt="Culturate session browse with filter pills">
+      <img src="images/Culturate/Museum.png" alt="Culturate museum detail">
+      <img src="images/Culturate/Calendar.png" alt="Culturate session discovery calendar">
+      <img src="images/Culturate/Ticket.png" alt="Culturate ticket screen">
+      <img src="images/Culturate/Enter information.png" alt="Culturate enter information screen">
+      <img src="images/Culturate/Payment.png" alt="Culturate payment screen">
+      <img src="images/Culturate/Payment-1.png" alt="Culturate payment confirmation screen">
     </div>
+  </section>
 
-    <div class="container-lg">
-               <section class="section">
-            <h2>Key Decisions</h2>
-            <ul>
-                <li>Removed mandatory onboarding to allow users to explore the platform immediately</li>
-                <li>Delayed monetization (ticket purchases) to reduce friction and build user trust</li>
-                <li>Designed multiple discovery paths:</li>
-                <ul>
-                    <li>Search</li>
-                    <li>Filters</li>
-                    <li>Category navigation</li>
-                    <li>Location based map</li>
-                </ul>
-                <li>Integrated geolocation to surface nearby museums and improve relevance</li>
-                <li>Included reviews and comments to support decision making</li>
-            </ul>
-        </section> 
-    </div>
+</main>
 
-     <div class="container-lg">
-               <section class="section">
-            <h2>Solution</h2>
-            <p>The final product enables users to:</p>
-            <ul>
-                <li>Discover museums through multiple intuitive pathways</li>
-                <li>Explore options based on location, interests, and categories</li>
-                <li>View detailed information and user feedback</li>
-                <li>Save favorite museums and manage tickets (for registered users)</li>
-                <li>Navigate a seamless experience without unnecessary barriers</li>
-            </ul>
-            <p>The platform balances accessibility for new users with additional functionality for returning users.</p>
-        </section> 
-    </div>
+<footer>
+  <span>&copy; Erandi M.</span>
+  <a href="index.html">&larr; Back to Portfolio</a>
+</footer>
 
-     <div class="container-lg">
-               <section class="section">
-            <h2>Validation & Iteration</h2>
-            <p>Usability testing was conducted across all stages of the design process.</p>
-            <ul>
-                <li>Tested low, mid, and high fidelity prototypes with multiple users</li>
-                <li>Identified usability issues and friction points early</li>
-                <li>Iterated designs based on real user feedback</li>
-                <li>Refined flows and interactions to improve clarity and usability</li>
-            </ul>
-            <p>The final high fidelity prototype was validated with users, resulting in a more intuitive and effective experience.</p>
-        </section> 
-    </div>
-
-    <div class="container-lg">
-               <section class="section">
-            <h2>Impact</h2>
-            <ul>
-                <li>Reduced barriers to entry by eliminating mandatory onboarding</li>
-                <li>Improved discoverability through multiple navigation paths</li>
-                <li>Increased usability through continuous testing and iteration</li>
-                <li>Created a flexible platform that supports both exploration and conversion</li>
-            </ul>
-        </section> 
-    </div>
-
-    <div class="container-lg">
-               <section class="section">
-            <h2>Reflection</h2>
-            <p>This project reinforced the value of collaboration and continuous validation.<br>
-            Working within a multidisciplinary team required clear communication, alignment, and shared ownership of decisions.<br> 
-            Iterative testing played a key role in refining the experience and ensuring that the final solution addressed real user needs.</p>
-        </section> 
-    </div>
-
-    <!-- Main Content -->
-    <div class="container-lg">
-        <!-- Final Designs - Platform Showcase -->
-        <section class="section" id="final-product">
-            <h2>Final Product</h2>
-            
-            <div class="image-collage">
-                <img src="images/Home mobile.png" alt="Mobile Homepage">
-                <img src="images/Pills.png" alt="Mobile Session Browse">
-                <img src="images/Museum.png" alt="Mobile My Agenda">
-                <img src="images/Calendar.png" alt="Session Discovery">
-                <img src="images/Ticket.png" alt="Speaker Profiles">
-                <img src="images/Enter information.png" alt="Personal Agenda">
-                <img src="images/Payment.png" alt="Personal Agenda">
-                <img src="images/Payment-1.png" alt="Personal Agenda">
-            </div>
-        </section>
-
-        <!-- Project Overview 
-        <section class="section">
-            <h2>Project Overview</h2>
-            <div class="overview-grid">
-                <div class="overview-card">
-                    <h4>Summary</h4>
-                    <p>Mobile app designed to centralize all museums in Buenos Aires, Argentina, giving users a simple and engaging way to discover cultural spaces across the city.</p>
-                </div>
-                <div class="overview-card">
-                    <h4>Role</h4>
-                    <p>UX Designer, responsible for shaping the user experience across research, flow definition, interaction design, and prototyping</p>
-                </div>
-                <div class="overview-card">
-                    <h4>Team</h4>
-                    <p>A small, multidisciplinary team composed of two UX designers, one graphic designer, and one marketing partner.</p>
-                </div>
-                <div class="overview-card">
-                    <h4>Timeline</h4>
-                    <p>Multi phase project including research, concept development, prototyping, user testing, and iterative refinement.</p>
-                </div>
-            </div>
-        </section>
-
-       
-        <section class="section">
-            <h2>Context & Problem</h2>
-            <h3>Background</h3>
-            <p>Buenos Aires has one of the richest museum ecosystems in Latin America, but information about these spaces is scattered across 
-                individual websites, outdated directories, and inconsistent social media pages. For locals and tourists who love cultural 
-                experiences, finding accurate details location, hours, exhibitions, ticketing, often requires jumping between multiple sources. 
-                CULTURATE was created to bring all museums into one centralized mobile platform, making cultural exploration easier, more 
-                intuitive, and more enjoyable. The app allows users to search through filters, use a search bar, explore an interactive map
-                that detects their location, save favorites, read and leave reviews, and book tickets directly from the platform.</p>
-            <h3>The Challenge</h3>
-            <p>The main challenge was designing an experience that could organize a large amount of diverse museum information while still 
-                feeling simple, modern, and easy to navigate. Users needed multiple ways to discover museums, by interest, proximity, or 
-                name, without feeling overwhelmed by options. The platform also had to support richer interactions like reviews, favorites, 
-                and ticket booking, all within a clean and intuitive mobile flow. Because the cultural landscape of Buenos Aires is constantly 
-                evolving, the product needed a flexible structure that could scale as new museums, features, and content types were added. 
-                Balancing clarity, depth, and scalability became central to shaping the UX strategy.</p>
-        </section>
-
-       
-        <section class="section">
-            <h2>Goals & Responsibilities</h2>
-            <h3>Primary Goals</h3>
-            <ul>
-                <li>Centralize all museums in Buenos Aires into a single, easy to navigate mobile platform.</li>
-                <li>Create multiple discovery paths filters, search, and an interactive map to help users find museums that match their interests.</li>
-                <li>Design a simple, modern experience that makes cultural exploration accessible to both locals and tourists.</li>
-                <li>Support richer engagement through features like favorites, reviews, and ticket booking.</li>
-                <li>Build a scalable structure that can grow as new museums, categories, and features are added.</li>
-                <li>Establish a visual and interaction language that feels culturally aligned with Buenos Aires.</li>
-            </ul>
-            <h3>My Responsibilities</h3>
-            <ul>
-                <li>Conducted user research to understand how people search for museums and what information they value most.</li>
-                <li>Defined the Information Architecture and core flows for search, filters, map exploration, museum details, favorites, reviews, and ticket booking.</li>
-                <li>Designed wireframes and interactive prototypes to validate usability and refine the experience.</li>
-                <li>Collaborated with the second UX designer to align on flows, patterns, and interaction logic.</li>
-                <li>Worked closely with the graphic designer to integrate branding, color, and visual identity into the UI.</li>
-                <li>Partnered with the marketing team member to ensure content, tone, and positioning matched user motivations and cultural engagement goals.</li>
-                <li>Iterated on the design through testing and feedback, refining clarity, navigation, and overall usability.</li>
-        </section>
-
-       
-        <section class="section">
-            <h2>Information Architecture</h2>
-            <p>CULTURATE required an Information Architecture that could organize a large and diverse set of museums while still feeling 
-                simple and intuitive for users exploring cultural spaces across Buenos Aires. Because the app supports multiple discovery 
-                paths, filters, search, and an interactive map, the IA needed to balance flexibility with clarity, ensuring users could always 
-                find what they were looking for without cognitive overload. <br><br>The structure was built around the three primary ways people 
-                naturally search for museums: by interest, by name, and by proximity. This led to a navigation model centered on Search, 
-                Filters, and Map, each offering a different entry point into the same unified museum database. From there, the museum 
-                detail pages became the core content hub, housing essential information such as hours, exhibitions, location, reviews, 
-                and ticket booking options.<br><br> To support deeper engagement, the IA also included personalized spaces like Favorites and 
-                Reviews, giving users a sense of ownership and continuity as they explored the city’s cultural offerings. Throughout the 
-                process, we refined naming, grouping, and hierarchy to keep the experience lightweight and predictable, even as new museums 
-                or categories were added.
-        </section>
-
-
-
-        
-        <section class="section">
-            <h2>Reflection</h2>
-            <p>Working on CULTURATE showed me how essential it is to design for clarity when a product brings together a large amount of 
-            diverse information. Centralizing all the museums in Buenos Aires into a single mobile experience required constant negotiation 
-            between depth and simplicity, ensuring users could explore freely without ever feeling overwhelmed or lost. It pushed me to think 
-            more strategically about how people search, how they make decisions, and how to support different discovery behaviors within one 
-            coherent structure. <br><br> Collaborating with a multidisciplinary team reinforced the value of cross disciplinary alignment. 
-            Each perspective, UX, visual design, and marketing, shaped the product in a different way, and balancing these inputs made me more 
-            intentional about communication, documentation, and shared decision making. As the app evolved, I learned to iterate quickly, 
-            validate assumptions early, and design with scalability in mind, knowing that new museums, categories, and features would continue 
-            to expand the experience. This project strengthened my ability to create systems that feel simple on the surface but are 
-            supported by thoughtful structure underneath, an approach that has become central to how I design complex, content rich products.</p>
-    </div> -->
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; Erandi M. | <a href="index.html">Back to Portfolio</a></p>
-    </footer>
-
-    <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop">
-        <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#arrow-up"></use></svg>
-    </button>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const scrollToTopBtn = document.getElementById('scrollToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollToTopBtn.classList.add('show');
-            } else {
-                scrollToTopBtn.classList.remove('show');
-            }
-        });
-        
-        scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
 </body>
 </html>

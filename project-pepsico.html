@@ -1,616 +1,538 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PepsiCo Project - Erandi M. Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PepsiCo Project - Erandi M. Portfolio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
 
-        :root {
-            --primary-color: #414c31;
-            --secondary-color: #f9c32c;
-            --light-bg: #fcf5e1;
-            --text-dark: #37342e;
-            --text-light: #fdf5e1;
-        }
+  :root {
+    --cream: #FAF7F2;
+    --cream-deep: #F1EBE0;
+    --ink: #1C1A17;
+    --ink-soft: #57534A;
+    --ink-faint: #A39C8F;
+    --rule: #E3DCCD;
+    --coral: #A8451F;
+    --coral-soft: #F2DFD3;
+    --teal: #2F5D4F;
+    --teal-soft: #DDE9E2;
+    --blue: #1A3F6F;
+    --blue-soft: #E0EAF5;
+    --max: 760px;
+  }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #fafafa;
-            color: #333;
-            line-height: 1.8;
-        }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
 
-        /* Header Navigation */
-        .navbar {
-            background-color: #fff;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            padding: 1.5rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
 
-        .navbar-brand {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color) !important;
-            letter-spacing: -0.5px;
-            text-decoration: none;
-        }
+  a { color: var(--coral); text-decoration: none; border-bottom: 1px solid currentColor; }
+  a:hover { opacity: 0.7; }
 
-        .navbar-brand:hover {
-            color: var(--secondary-color) !important;
-        }
+  .topnav { padding: 28px 32px; max-width: var(--max); margin: 0 auto; }
+  .topnav a { border: none; font-size: 14px; color: var(--ink-soft); letter-spacing: 0.02em; }
+  .topnav a:hover { color: var(--coral); opacity: 1; }
 
-        /* Hero Section */
-        .hero-section {
-            padding: 5rem 0;
-            background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%);
-        }
+  header.hero { max-width: var(--max); margin: 0 auto; padding: 24px 32px 0; }
 
-        .hero-section h1 {
-            font-family: 'Syne', sans-serif;
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-            letter-spacing: -1px;
-        }
+  .eyebrow {
+    font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--coral); font-weight: 600; margin-bottom: 18px;
+  }
 
-        .hero-section p {
-            font-size: 1.25rem;
-            color: #666;
-            margin-bottom: 0;
-            max-width: 600px;
-            font-weight: 400;
-        }
+  h1.title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 9vw, 84px);
+    font-weight: 500; line-height: 0.95;
+    margin: 0 0 6px; letter-spacing: -0.01em;
+  }
 
-        /* Impact Snapshot Card */
-        .impact-snapshot {
-            background: #fff;
-            border-radius: 24px;
-            padding: 2.5rem;
-            margin: 4rem 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            border-left: 6px solid var(--secondary-color);
-        }
+  .subtitle {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 20px; color: var(--ink-soft); font-weight: 400;
+    margin: 0 0 32px;
+  }
 
-        .impact-snapshot h3 {
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--primary-color);
-            margin-bottom: 2rem;
-        }
+  .role-line {
+    display: flex; flex-wrap: wrap; gap: 8px 28px;
+    padding: 20px 0 28px; border-top: 1px solid var(--rule);
+    margin-bottom: 36px; font-size: 14px; color: var(--ink-soft);
+  }
+  .role-line strong { color: var(--ink); font-weight: 600; }
 
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
+  .intro {
+    font-size: 19px; line-height: 1.65; color: var(--ink-soft);
+    margin-bottom: 40px; max-width: 680px;
+  }
 
-        .impact-item {
-            text-align: center;
-        }
+  .confidential-bar {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--blue-soft); border: 1px solid #B8CCE4;
+    border-radius: 10px; padding: 12px 16px; margin-bottom: 40px;
+    font-size: 13.5px; color: var(--blue);
+  }
+  .confidential-bar svg { flex-shrink: 0; }
 
-        .impact-item h4 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
-        }
+  .hero-img-wrap { max-width: 1040px; margin: 0 auto; padding: 0 32px; }
+  .hero-img {
+    width: 100%; border-radius: 18px; overflow: hidden;
+    border: 1px solid var(--rule); background: var(--cream-deep);
+  }
+  .hero-img img { width: 100%; height: auto; display: block; }
 
-        .impact-item p {
-            font-size: 0.95rem;
-            color: #666;
-            font-weight: 500;
-        }
+  main { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
 
-        /* Overview Grid */
-        .overview-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
-            margin: 3rem 0;
-        }
+  section { padding: 76px 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: none; }
 
-        .overview-card {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 4px solid var(--secondary-color);
-        }
+  .section-label {
+    font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink-faint); font-weight: 600; margin-bottom: 14px;
+  }
 
-        .overview-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-        }
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 500; line-height: 1.15;
+    margin: 0 0 22px; max-width: 600px;
+  }
 
-        .overview-card h4 {
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
+  h3.sub-h {
+    font-family: 'Fraunces', serif; font-size: 22px;
+    font-weight: 500; margin: 36px 0 14px;
+  }
 
-        .overview-card p {
-            font-size: 1.1rem;
-            color: #333;
-            line-height: 1.6;
-            font-weight: 500;
-        }
+  p { margin: 0 0 18px; color: var(--ink); }
+  p.lede { font-size: 18px; color: var(--ink-soft); }
 
-        /* Section Styling */
-        .section {
-            padding: 4rem 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
+  .pull {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 23px; line-height: 1.5; color: var(--coral);
+    margin: 28px 0; padding-left: 22px; border-left: 2px solid var(--coral);
+  }
 
-        .section:last-child {
-            border-bottom: none;
-        }
+  ul.decisions { list-style: none; padding: 0; margin: 24px 0; }
+  ul.decisions li {
+    padding: 18px 0; border-top: 1px solid var(--rule);
+    display: grid; grid-template-columns: 28px 1fr; gap: 14px;
+  }
+  ul.decisions li:last-child { border-bottom: 1px solid var(--rule); }
+  ul.decisions .mark { color: var(--coral); font-size: 18px; line-height: 1.5; }
+  ul.decisions strong { display: block; margin-bottom: 4px; }
+  ul.decisions span.body { color: var(--ink-soft); font-size: 15.5px; }
 
-        .section h2 {
-            font-family: 'Syne', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 2rem;
-            color: var(--primary-color);
-            letter-spacing: -0.5px;
-        }
+  .stat-strip {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0; border: 1px solid var(--rule); border-radius: 14px;
+    overflow: hidden; margin: 30px 0;
+  }
+  @media (max-width: 640px) { .stat-strip { grid-template-columns: repeat(2, 1fr); } }
+  .stat-cell {
+    padding: 22px 20px; border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .stat-cell:nth-child(4n) { border-right: none; }
+  @media (max-width: 640px) {
+    .stat-cell:nth-child(2n) { border-right: none; }
+  }
+  .stat-num {
+    font-family: 'Fraunces', serif; font-size: 36px; font-weight: 500;
+    color: var(--coral); line-height: 1; margin-bottom: 6px;
+  }
+  .stat-label { font-size: 13px; color: var(--ink-soft); line-height: 1.4; }
 
-        .section h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 2rem 0 1rem 0;
-            color: #333;
-        }
+  .callout {
+    border-radius: 14px; padding: 26px 28px; margin: 30px 0;
+  }
+  .callout.blue { background: var(--blue-soft); border: 1px solid #B8CCE4; }
+  .callout.teal { background: var(--teal-soft); border: 1px solid #9FCFBE; }
+  .callout .section-label { margin-bottom: 8px; }
+  .callout.blue .section-label { color: var(--blue); }
+  .callout.teal .section-label { color: var(--teal); }
+  .callout p { margin-bottom: 0; font-size: 15.5px; line-height: 1.65; }
+  .callout.blue p { color: #1A3F6F; }
+  .callout.teal p { color: #1F3D33; }
 
-        .section p {
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
+  .process-steps { list-style: none; padding: 0; margin: 26px 0; counter-reset: step; }
+  .process-steps li {
+    counter-increment: step;
+    padding: 16px 0 16px 44px;
+    border-top: 1px solid var(--rule);
+    position: relative;
+    color: var(--ink-soft); font-size: 15.5px;
+  }
+  .process-steps li:last-child { border-bottom: 1px solid var(--rule); }
+  .process-steps li::before {
+    content: counter(step);
+    position: absolute; left: 0; top: 14px;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--ink); color: var(--cream);
+    font-family: 'Fraunces', serif; font-size: 13px; font-weight: 500;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .process-steps strong { color: var(--ink); }
 
-        .section ul {
-            font-size: 1.1rem;
-            color: #555;
-            margin-left: 2rem;
-            margin-bottom: 1.5rem;
-        }
+  .before-after {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 28px 0;
+  }
+  @media (max-width: 640px) { .before-after { grid-template-columns: 1fr; } }
+  .ba-card { border-radius: 12px; padding: 20px 22px; }
+  .ba-card.before { background: var(--cream-deep); border: 1px solid var(--rule); }
+  .ba-card.after { background: var(--teal-soft); border: 1px solid #9FCFBE; }
+  .ba-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 10px;
+  }
+  .ba-card.before .ba-label { color: var(--ink-faint); }
+  .ba-card.after .ba-label { color: var(--teal); }
+  .ba-card ul { list-style: none; padding: 0; margin: 0; }
+  .ba-card ul li {
+    font-size: 14.5px; padding: 6px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    color: var(--ink-soft);
+  }
+  .ba-card ul li:last-child { border-bottom: none; }
+  .ba-card.after ul li { color: #1F3D33; }
 
-        .section li {
-            margin-bottom: 0.8rem;
-            line-height: 1.8;
-        }
+  figure { margin: 36px 0; }
+  figure img { width: 100%; border-radius: 14px; border: 1px solid var(--rule); display: block; }
+  figcaption { font-size: 13.5px; color: var(--ink-faint); margin-top: 10px; text-align: center; }
 
-        /* Image Grid */
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
+  .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 36px 0; }
+  .gallery-grid img { width: 100%; border-radius: 14px; border: 1px solid var(--rule); display: block; }
+  .gallery-grid .full { grid-column: 1 / -1; }
+  @media (max-width: 640px) { .gallery-grid { grid-template-columns: 1fr; } }
 
-        .image-grid img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
+  .metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 28px 0 8px; }
+  @media (max-width: 640px) { .metrics-grid { grid-template-columns: 1fr; } }
+  .metric .num {
+    font-family: 'Fraunces', serif; font-size: 40px; font-weight: 500;
+    color: var(--coral); line-height: 1; margin-bottom: 8px;
+  }
+  .metric .label { font-size: 14.5px; color: var(--ink-soft); line-height: 1.45; }
 
-        .image-grid img:hover {
-            transform: scale(1.02);
-        }
+  footer {
+    max-width: var(--max); margin: 0 auto; padding: 50px 32px 70px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 14px; color: var(--ink-faint);
+  }
+  footer a { color: var(--ink-soft); border: none; }
 
-        .full-width-image {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            margin: 2rem 0;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--primary-color);
-            padding: 3rem 0;
-            margin-top: 4rem;
-            text-align: center;
-            color: var(--text-light);
-            width: 100vw;
-            position: relative;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        footer a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Button */
-        .btn-custom {
-            background-color: #fdd052;
-            border: 2px solid var(--text-dark);
-            border-radius: 9px;
-            padding: 23px 47px;
-            font-weight: 700;
-            font-size: 18px;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-            color: var(--text-dark);
-        }
-
-        .btn-custom:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .social-icon {
-            width: 24px;
-            height: 24px;
-            transition: all 0.3s ease;
-        }
-
-        .social-icon:hover {
-            transform: scale(1.2);
-            color: var(--secondary-color);
-        }
-
-        /* Scroll to Top Button */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 50px;
-            height: 50px;
-            background-color: var(--light-bg);
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s ease;
-            z-index: 999;
-        }
-
-        .scroll-to-top.show {
-            display: flex;
-        }
-
-        .scroll-to-top:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .scroll-to-top svg {
-            width: 24px;
-            height: 24px;
-            color: var(--text-dark);
-        }
-
-        /* Footer styles */
-        .footer-link {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 800;
-            transition: all 0.3s ease;
-        }
-
-        .footer-link:hover {
-            color: var(--secondary-color);
-            transform: translateX(5px);
-        }
-
-        .text-yellow {
-            color: var(--secondary-color);
-        }
-
-        .content-title {
-            font-size: 2rem;
-            font-weight: 800;
-            letter-spacing: -0.04em;
-        }
-
-        .text-light-custom {
-            color: var(--text-light);
-        }
-
-        .bg-dark-custom {
-            background-color: var(--primary-color);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-section h1 {
-                font-size: 2.5rem;
-            }
-
-            .section h2 {
-                font-size: 2rem;
-            }
-
-            .overview-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  @media (max-width: 640px) {
+    section { padding: 56px 0; }
+    .role-line { gap: 8px 18px; }
+    .stat-strip { grid-template-columns: repeat(2,1fr); }
+  }
+</style>
 </head>
 <body>
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-right" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M17.92 11.62a1 1 0 0 0-.21-.33l-5-5a1 1 0 0 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l5-5a1 1 0 0 0 .21-.33a1 1 0 0 0 0-.76Z" />
-        </symbol>
-        <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-up" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M12 6a1 1 0 0 0-.33.21l-5 5a1 1 0 0 0 1.42 1.42L11 9.41V18a1 1 0 0 0 2 0V9.41l3.3 3.29a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-5-5A1 1 0 0 0 12 6Z" />
-        </symbol>
-    </svg>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container-lg">
-            <a class="navbar-brand" href="index.html"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+<nav class="topnav">
+  <a href="index.html">&larr; Back to Portfolio</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow">Case study &middot; Enterprise UX &middot; Sr. UX Designer</div>
+  <h1 class="title">PepsiCo</h1>
+  <p class="subtitle">Redesigning a global intranet used by 100,000 employees across multiple regions.</p>
+
+  <div class="role-line">
+    <span><strong>Role</strong> &nbsp;Sr. UX Designer, PepsiCo (full time)</span>
+    <span><strong>Platform</strong> &nbsp;myPepsiCo, desktop &amp; mobile</span>
+    <span><strong>Scope</strong> &nbsp;IA, cross platform design, design &amp; dev alignment, Agile delivery</span>
+  </div>
+
+  <p class="intro">myPepsiCo is PepsiCo's global intranet, a platform used daily by roughly 100,000 employees across multiple regions to access tools, content, and internal services. 
+    I was part of the UX efforts across a full redesign: from information architecture and card sorting to cross platform design, role based experiences, and end to end delivery in a complex Agile and ServiceNow environment.</p>
+
+  <div class="confidential-bar">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    Due to company confidentiality, this case study shares a limited selection of screens and high level detail. The process and decisions are my own.
+  </div>
+</header>
+
+<div class="hero-img-wrap">
+  <div class="hero-img">
+    <img src="http://erandimendoza.com/images/mypepsico_homepage.png" alt="myPepsiCo redesigned homepage">
+  </div>
+</div>
+
+<main>
+
+  <!-- THE REFRAME -->
+  <section>
+    <div class="section-label">The challenge</div>
+    <h2>A platform used by everyone, optimized for no one.</h2>
+    <p class="lede">myPepsiCo had grown into a fragmented experience over time. Information was hard to find. Navigation didn't reflect how different employees actually thought about their work. Design patterns were inconsistent across regions, and the architecture was difficult to scale or maintain.</p>
+    <p>The challenge wasn't adding features, it was simplifying an already complex system without disrupting the workflows of 100,000 people who depended on it daily. Every structural decision had to hold up across frontline workers, desk employees, and managers, in multiple regions, on desktop and mobile, inside a platform (ServiceNow) with real technical constraints.</p>
+    <div class="pull">The goal was not a redesign for its own sake. It was a platform that worked at the scale PepsiCo actually operates at.</div>
+  </section>
+
+  <!-- SCALE -->
+  <section>
+    <div class="section-label">Scale</div>
+    <h2>What enterprise UX actually means</h2>
+    <p>Most portfolio projects deal with a few screens and a handful of edge cases. This one dealt with a global platform, multiple workstreams running in parallel, dozens of stakeholders, 
+      and a delivery process where design decisions had to be documented well enough for engineering teams across regions to implement consistently without ongoing hand holding.</p>
+    <div class="stat-strip">
+      <div class="stat-cell">
+        <div class="stat-num">~100K</div>
+        <div class="stat-label">employees using the platform globally</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">30+</div>
+        <div class="stat-label">user stories owned per sprint</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">14→6</div>
+        <div class="stat-label">steps to reach key information</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">3</div>
+        <div class="stat-label">distinct role based experiences designed</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLE -->
+  <section>
+    <div class="section-label">My role</div>
+    <h2>UX/UI across a multi workstream redesign</h2>
+    <p>I joined as a Senior UX Designer and led key initiatives across the full redesign of myPepsiCo. That meant owning design direction, guiding a team of designers, and staying closely involved through implementation not just handing off files and stepping back.</p>
+    <ul class="decisions">
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Led a team of designers across multiple workstreams.</strong>
+          <span class="body">Guided design direction and maintained quality and consistency as the project scaled across parallel tracks.</span>
         </div>
-    </nav>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Defined UX strategy, information architecture, and interaction patterns.</strong>
+          <span class="body">Set the structural foundation for the redesign, from nav taxonomy through component behavior.</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Partnered with product owners, engineers, and stakeholders.</strong>
+          <span class="body">Worked across functions to align on priorities, resolve constraints, and keep design decisions grounded in what was actually buildable.</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Owned design quality from concept through implementation.</strong>
+          <span class="body">Stayed in the loop through development, raising bugs, reviewing builds, and closing the gap between what was designed and what shipped.</span>
+        </div>
+      </li>
+    </ul>
+  </section>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container-lg">
-            <h1>PepsiCo</h1>
-            <p>Redesigned PepsiCo’s global intranet (myPepsiCo), a platform used by employees across multiple regions to access tools, content, and internal services.<br><br>
-            The challenge was to simplify a fragmented and complex experience, improve navigation and findability, and create a scalable foundation for future growth. <br><br>
-            Led UX efforts across information architecture, and cross platform design, while ensuring successful implementation within a highly complex enterprise 
-            and Agile environment. 
-                </p>            <a href="#Final" class="btn-custom" style="margin-top: 2rem;">
-                View Final Product
-                <svg class="social-icon" width="20" height="20"><use xlink:href="#arrow-right"></use></svg>
-            </a>        </div>
-    </section>
-    
-    <!-- Main Content -->
-    <div class="container-lg">
-        <section class="section">
-            <h2>Problem</h2>
-            <ul>
-                <li>The existing intranet experience was fragmented, difficult to navigate, and inconsistent across regions and platforms.</li>
-                <li>Employees struggled to find relevant information, resulting in inefficient workflows and increased dependency on support channels.</li>
-                <li>The lack of standardized design patterns and content structure made the platform difficult to scale and maintain.</li>
-            </ul>
-        </section>
+  <!-- PROCESS -->
+  <section>
+    <div class="section-label">Process</div>
+    <h2>Research, structure, then screens</h2>
+    <p>Before any UI work, I needed to understand how employees across very different roles and regions were actually trying to use the platform, and where the current structure was failing them.</p>
+    <ol class="process-steps">
+      <li><strong>Card sorting across regions</strong> to understand how employees in different markets mentally organized the platform's content, not how the original navigation assumed they did.</li>
+      <li><strong>Navigation restructure</strong> based on sorting results, replacing the existing taxonomy with one that aligned with users' actual mental models.</li>
+      <li><strong>Role based experience design</strong> for three distinct user types, frontline workers, desk employees, and managers, each with different access needs, workflows, and device preferences.</li>
+      <li><strong>Cross platform design</strong> ensuring the experience held up on desktop and mobile, respecting the constraints of ServiceNow as the underlying platform.</li>
+      <li><strong>Agile delivery</strong> in close collaboration with engineering: 30+ user stories per sprint, structured review processes, real time unblocking, and bug tracking in Azure DevOps.</li>
+    </ol>
+  </section>
 
-    <div class="container-lg">
-        <section class="section">
-            <h2>My Role</h2>
-            <p>Senior UX Designer leading key initiatives across the redesign of myPepsiCo.</p>
-            <ul>
-                <li>Led a team of designers and guided design direction across multiple workstreams</li>
-                <li>Defined UX strategy, information architecture, and interaction patterns</li>
-                <li>Partnered closely with product owners, engineers, and stakeholders</li>
-                <li>Owned design quality from concept through implementation</li>
-            </ul>
-        </section>
+  <!-- KEY DECISIONS -->
+  <section>
+    <div class="section-label">Key decisions</div>
+    <h2>Simplification as the strategy</h2>
+    <p>The temptation in a large enterprise redesign is to try to solve everything at once. The decisions that mattered most on this project were the ones that held the line on simplicity.</p>
+    <ul class="decisions">
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Card sorting to redefine navigation, not gut instinct.</strong>
+          <span class="body">We ran card sorting exercises to discover how employees across regions actually grouped content. The resulting taxonomy replaced assumptions with evidence, 
+            and the navigation became something people could actually find their way around.</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Simplification over feature expansion.</strong>
+          <span class="body">At enterprise scale, adding features is easy. Removing steps is hard. We prioritized reducing cognitive load over launching new capabilities, the click path reduction from 14 to 6 steps came from that principle.</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Role based experiences, not one size fits all.</strong>
+          <span class="body">Frontline workers, desk employees, and managers all use myPepsiCo differently. We designed distinct experiences for each, 
+            reflecting different access levels, tasks, and device realities, rather than forcing everyone into the same flow.</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Working within ServiceNow, not against it.</strong>
+          <span class="body">ServiceNow is a powerful but constrained platform. Rather than designing an ideal state that engineering couldn't ship, we found the highest quality experience possible within the platform's real boundaries.</span>
+        </div>
+      </li>
+    </ul>
 
-    <div class="container-lg">
-        <section class="section">
-            <h2>Execution & Delivery as Scale</h2>
-            <p>To ensure design quality and consistency at scale, I played a key role in bridging design and development throughout the Agile lifecycle.</p>
-            <ul>
-                <li>Owned the creation, review, and approval of 30+ user stories per sprint, 
-                    ensuring each story clearly translated design intent into actionable requirements for engineering teams</li>
-                <li>Established a structured review process to maintain quality and completeness, identifying gaps and guiding teams on how to resolve them</li>
-                <li>Acted as the primary point of contact for developers, answering questions, clarifying requirements, and unblocking progress in real time</li>
-                <li>Raised and tracked bugs during implementation, ensuring alignment between final delivery and Figma designs</li>
-                <li>Provided detailed feedback and documentation in Azure DevOps (ADO), improving communication and reducing iteration cycles</li>
-            </ul>
-            <p>This approach ensured that designs were not only delivered, but implemented accurately and consistently across a complex enterprise system.</p>
-        </section>
-            
-    <div class="container-lg">
-        <section class="section">
-            <h2>Key Decisions</h2>
-            <ul>
-                <li>Used Card Sorting to redefine navigation structure, aligning with users mental models across regions</li>
-                <li>Prioritized simplification of workflows over feature expansion to reduce cognitive load</li>
-                <li>Designed role based experiences (Frontline, Desk employees and Managers) to reflect different access levels and needs</li>
-                <li>Balanced platform constraints (ServiceNow) with usability improvements</li>
-            </ul>
-        </section>
+    <div class="before-after">
+      <div class="ba-card before">
+        <div class="ba-label">Before</div>
+        <ul>
+          <li>14+ steps to reach key information</li>
+          <li>Fragmented navigation across regions</li>
+          <li>No role based differentiation</li>
+          <li>Inconsistent patterns, hard to scale</li>
+          <li>High support channel dependency</li>
+        </ul>
+      </div>
+      <div class="ba-card after">
+        <div class="ba-label">After</div>
+        <ul>
+          <li>6 steps to key information</li>
+          <li>Unified IA aligned to mental models</li>
+          <li>3 distinct role based experiences</li>
+          <li>Scalable design system foundation</li>
+          <li>Reduced implementation inconsistencies</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <div class="container-lg">
-        <section class="section">
-            <h2>Impact</h2>
-            <ul>
-                <li>Reduced click path to key information from 14+ steps to 6</li>
-                <li>Improved findability and navigation efficiency across global users</li>
-                <li>Enabled scalable design through a unified design system</li>
-                <li>Improved alignment between design and development, reducing implementation inconsistencies</li>
-            </ul>
-        </section>
+  <!-- EXECUTION -->
+  <section>
+    <div class="section-label">Execution &amp; delivery</div>
+    <h2>Design doesn't end at handoff</h2>
+    <p>One of the biggest gaps in enterprise UX is the distance between what gets designed and what actually ships. I closed that gap by staying involved through the full Agile delivery lifecycle, not as a reviewer at the end, but as an active participant throughout.</p>
 
-    <div class="container-lg">
-        <section class="section">
-            <h2>What I Learned</h2>
-            <p>Designing for enterprise systems requires balancing user needs, technical constraints, and business priorities. 
-                Success depends not only on strong UX thinking, but on the ability to align cross functional teams and drive execution at scale.</p>
-        </section>
+    <h3 class="sub-h">How I bridged design and development</h3>
+    <ul class="decisions">
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Owned 30+ user stories per sprint.</strong>
+          <span class="body">Created, reviewed, and approved each story to ensure design intent translated clearly into actionable engineering requirements, no ambiguity, no room for interpretation in the wrong direction.</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Established a structured story review process.</strong>
+          <span class="body">Built a repeatable quality check that identified gaps before engineering picked up work, reducing back and forth mid sprint.</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Primary design contact for developers.</strong>
+          <span class="body">Answered questions, clarified requirements, and unblocked progress in real time, keeping development moving without requiring engineers to hunt for answers across teams.</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Tracked bugs and implementation drift in Azure DevOps.</strong>
+          <span class="body">Raised and documented issues during implementation, ensuring what shipped matched Figma designs rather than drifting through the development process.</span>
+        </div>
+      </li>
+    </ul>
 
-        <!-- Interactive Design Showcase -->
-        <section class="section" id="Final">
-            <h2>Final product</h2>
-            <p style="font-size: 1.1rem; color: #555; margin-bottom: 2.5rem; font-style: italic;">Due to company confidentiality, I’m only able to share a limited selection of images and 
-                high level details from this project.</p>
-            <div class="image-grid" style="grid-template-columns: 1fr; gap: 2.5rem;">
-                <img src="images/mypepsico_homepage.png" alt="Full App Overview" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);">
-            </div>
-            <div class="image-grid" style="grid-template-columns: 1fr; gap: 2.5rem;">
-                <img src="images/mobile overview.jpeg" alt="Full App Overview" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);">
-            </div>
-            <div class="image-grid" style="grid-template-columns: 1fr; gap: 2.5rem;">
-                <img src="images/App Store 4.png" alt="Full App Overview" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);">
-            </div>
-        </section>
+    <div class="callout blue">
+      <div class="section-label">Why this matters</div>
+      <p>At 100,000 users across multiple regions, an implementation error isn't a small thing. The discipline of closing the design to development gap, through clear story writing, structured review, and active bug tracking, is what separates a redesign that holds up in production from one that erodes over time.</p>
+    </div>
+  </section>
 
-        <!-- Project Overview 
-        <section class="section">
-            <h2>Project Overview</h2>
-            <div class="overview-grid">
-                <div class="overview-card">
-                    <h4>Summary</h4>
-                    <p>Redesign of PepsiCo’s global intranet, a platform used across regions and business units. 
-                        My main focus was improving the Information Architecture and overall layout to make the 
-                        experience more intuitive and user friendly.</p>
-                </div>
-                <div class="overview-card">
-                    <h4>Role</h4>
-                    <p>UX Designer, Information Architecture, navigation redesign, taxonomy refinement, research support, interaction design.</p>
-                </div>
-                <div class="overview-card">
-                    <h4>Team</h4>
-                    <p>Worked alongside a UX Architect, UX Designers, Product Managers, Engineering teams, Content/Communications partners, and the designer responsible for the brand redesign.</p>
-                </div>
-                <div class="overview-card">
-                    <h4>Timeline</h4>
-                    <p>Multi phase project spanning three years, covering discovery, IA restructuring, prototyping, and iterative validation.</p>
-                </div>
-            </div>
-        </section>
+  <!-- IMPACT -->
+  <section>
+    <div class="section-label">Impact</div>
+    <div class="metrics-grid">
+      <div class="metric">
+        <div class="num">14→6</div>
+        <div class="label">steps reduced to reach key information for global employees</div>
+      </div>
+      <div class="metric">
+        <div class="num">3</div>
+        <div class="label">role based experiences designed for frontline, desk, and manager users</div>
+      </div>
+      <div class="metric">
+        <div class="num">1</div>
+        <div class="label">unified design system enabling consistent, scalable delivery across regions</div>
+      </div>
+    </div>
+    <ul class="decisions" style="margin-top:30px;">
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Improved findability and navigation efficiency</strong>
+          <span class="body">across global users through a taxonomy built on card sorting evidence rather than organizational assumptions.</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Enabled scalable design</strong>
+          <span class="body">through a unified system that reduced inconsistencies across regions and made future iterations faster to ship.</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Reduced implementation inconsistencies</strong>
+          <span class="body">through structured story writing, real time developer support, and active bug tracking in ADO.</span>
+        </div>
+      </li>
+    </ul>
+  </section>
 
+  <!-- TAKEAWAY -->
+  <section>
+    <div class="section-label">What I took away</div>
+    <h2>Enterprise UX is as much about alignment as it is about design</h2>
+    <p>Designing for 100,000 people across multiple regions and platforms taught me that the hardest part of enterprise UX isn't the craft, it's the coordination. Getting a decision made, documented clearly enough to survive handoff, and implemented consistently across a complex engineering environment requires a different set of muscles than designing a great screen.</p>
+    <p>The click path reduction from 14 to 6 steps didn't come from a single design insight. It came from months of card sorting, stakeholder alignment, architecture decisions, story writing, developer conversations, and bug tracking, all of it adding up to something that actually shipped the way it was designed.</p>
+    <div class="callout teal">
+      <div class="section-label">The principle I carry forward</div>
+      <p>A design that doesn't survive implementation isn't finished. At any scale, whether it's a concept project or a global enterprise platform, the designer's job isn't done until what was designed is what shipped.</p>
+    </div>
+  </section>
 
+  <!-- GALLERY -->
+  <section id="Final">
+    <div class="section-label">Final product</div>
+    <h2>Selected screens</h2>
+    <p style="font-size:14px; color:var(--ink-faint); margin-bottom:30px;">Due to company confidentiality, only a limited selection of screens can be shared publicly.</p>
+    <div class="gallery-grid">
+      <img class="full" src="images/PepsiCo/mypepsico_homepage.png" alt="myPepsiCo redesigned homepage">
+      <img class="full" src="images/PepsiCo/mobile overview.jpeg" alt="myPepsiCo mobile overview">
+      <img class="full" src="images/PepsiCo/App Store 4.png" alt="myPepsiCo app store screens">
+    </div>
+  </section>
 
-        <section class="section">
-            <h2>Context & Problem</h2>
-            <h3>Background</h3>
-            <p>PepsiCo’s global intranet is used daily by employees across regions, functions, and business units. 
-                Over the years, the platform had become a fragmented ecosystem with hundreds of microsites, 
-                inconsistent layouts, and duplicated content. The legacy homepage was especially problematic: 
-                it was overloaded with news and promotional content, but none of it helped employees complete 
-                their day to day tasks. Key tools and resources were buried, navigation patterns were unclear, 
-                and the overall experience didn’t support how people actually worked. With the introduction of 
-                a refreshed brand and new communication standards, the intranet needed a redesign that improved
-                 usability while aligning with the updated visual direction.</p>
-            <h3>The Challenge</h3>
-            <p>The main challenge was to simplify a complex, content heavy environment and make it easier for 
-                employees to find what they needed. This required rethinking the Information Architecture,
-                 restructuring the navigation model, and redesigning the mega menu, while also improving the 
-                 taxonomy across the entire site. The goal was to create a more intuitive, consistent experience 
-                 that supported different user groups, reduced friction, and aligned with the new brand direction.</p>
-        </section>
+</main>
 
+<footer>
+  <span>&copy; Erandi M.</span>
+  <a href="index.html">&larr; Back to Portfolio</a>
+</footer>
 
-        <section class="section">
-            <h2>Goals & Responsibilities</h2>
-            <h3>Primary Goals</h3>
-            <ul>
-                <li>Improve the Information Architecture to reduce complexity and make content easier to find.</li>
-                <li>Redesign the navigation model and mega menu to support faster, more intuitive access to tools and resources.</li>
-                <li>Refine the sitewide taxonomy to create a consistent structure across hundreds of microsites.</li>
-                <li>Align the intranet with the new brand direction and updated communication standards.</li>
-                <li>Create a more useful homepage that supports employees’ day to day tasks instead of overwhelming them with news.</li>
-                <li>Establish a scalable structure that could support future growth and content governance.</li>
-            </ul>
-            <h3>My Responsibilities</h3>
-            <ul>
-                <li>Reworked the Information Architecture, including navigation flows, content grouping, and hierarchy.</li>
-                <li>Redesigned the mega menu and key navigation patterns to reduce click paths and improve clarity.</li>
-                <li>Refined the taxonomy across the entire site to ensure consistency and easier content discovery.</li>
-                <li>Supported research activities such as card sorting, usability testing, and stakeholder interviews.</li>
-                <li>Created wireframes, interaction patterns, and layout improvements for core pages.</li>
-                <li>Collaborated with Product Managers, Engineering teams, Communications partners, and the brand designer to ensure alignment across design, content, and technical constraints.</li>
-                <li>Contributed to the structure and logic behind components used in the evolving design system.</li>
-                <li>Led daily calls with developers to ensure the build matched the design intent, answering questions, clarifying interactions, and occasionally helping with HTML and CSS when needed.</li>
-                <li>Identified layout and usability issues during development, catching small but impactful improvements that could have been missed due to the team’s workload and tight timelines.</li>
-            </ul>
-        </section>
-
-
-        <section class="section">
-            <h2>Information Architecture</h2>
-            <p>The intranet’s structure had grown organically over the years, resulting in duplicated content, 
-                inconsistent naming, and navigation patterns that didn’t match how employees actually searched 
-                for information. My work focused on reorganizing this ecosystem so it could support clearer paths, 
-                faster access, and a more intuitive experience across regions and business units.
-                To do this, I restructured the navigation model, regrouped content based on user tasks, and redesigned 
-                the mega menu to reduce unnecessary steps. Improving the mega menu also meant revisiting the entire site’s 
-                taxonomy, cleaning up labels, aligning terminology across teams, and creating a more consistent hierarchy 
-                that could scale as new content was added. I collaborated closely with the UX Architect and content partners 
-                to validate these decisions through card sorting, stakeholder reviews, and iterative testing.
-                The result was a more coherent IA that supported both everyday tasks and long term governance, 
-                making it easier for employees to find what they needed without getting lost in the complexity of the system.</p>
-        </section>
-
-
-        <section class="section">
-            <h2>Reflection</h2>
-         <p>Redesigning such a large intranet helped me refine how I approach complexity. 
-            I learned how much impact clear taxonomy and navigation decisions can have on 
-            people’s day to day work, and how essential it is to stay aligned with developers 
-            during implementation. Supporting them with design clarification, and sometimes
-            even HTML/CSS, showed me how small details can easily get lost when teams are 
-            under pressure. Going forward, I’d push even harder for early alignment on content
-            governance and long term maintenance.</p>
-        </section>
-    </div> -->
-
-
-    <footer>
-        <p>&copy; Erandi M. | <a href="index.html">Back to Portfolio</a></p>
-    </footer>
-
-    <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop">
-        <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#arrow-up"></use></svg>
-    </button>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const scrollToTopBtn = document.getElementById('scrollToTop');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollToTopBtn.classList.add('show');
-            } else {
-                scrollToTopBtn.classList.remove('show');
-            }
-        });
-
-        scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
 </body>
 </html>

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kuk Project - Erandi M. Portfolio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
+
+  :root {
+    --cream: #FAF7F2;
+    --cream-deep: #F1EBE0;
+    --ink: #1C1A17;
+    --ink-soft: #57534A;
+    --ink-faint: #A39C8F;
+    --rule: #E3DCCD;
+    --coral: #A8451F;
+    --coral-soft: #F2DFD3;
+    --teal: #2F5D4F;
+    --teal-soft: #DDE9E2;
+    --max: 760px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--coral); text-decoration: none; border-bottom: 1px solid currentColor; }
+  a:hover { opacity: 0.7; }
+
+  .topnav {
+    padding: 28px 32px;
+    max-width: var(--max);
+    margin: 0 auto;
+  }
+  .topnav a {
+    border: none;
+    font-size: 14px;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+  .topnav a:hover { color: var(--coral); opacity: 1; }
+
+  header.hero {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 24px 32px 0;
+  }
+
+  .eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--coral);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+
+  h1.title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 9vw, 84px);
+    font-weight: 500;
+    line-height: 0.95;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .subtitle {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--ink-soft);
+    font-weight: 400;
+    margin: 0 0 32px;
+  }
+
+  .role-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 28px;
+    padding: 20px 0 28px;
+    border-top: 1px solid var(--rule);
+    margin-bottom: 36px;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .role-line strong { color: var(--ink); font-weight: 600; }
+
+  .intro {
+    font-size: 19px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin-bottom: 40px;
+    max-width: 680px;
+  }
+
+  .hero-img-wrap {
+    max-width: 1040px;
+    margin: 0 auto 0;
+    padding: 0 32px;
+  }
+  .hero-img {
+    width: 100%;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--coral-soft), var(--cream-deep));
+    aspect-ratio: 16/9.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-faint);
+    font-size: 14px;
+    border: 1px solid var(--rule);
+    overflow: hidden;
+  }
+  .hero-img img { width: 100%; height: 100%; object-fit: cover; }
+
+  main { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
+
+  section { padding: 76px 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: none; }
+
+  .section-label {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 500;
+    line-height: 1.15;
+    margin: 0 0 22px;
+    max-width: 600px;
+  }
+
+  h3.sub-h {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin: 36px 0 14px;
+  }
+
+  p { margin: 0 0 18px; color: var(--ink); }
+  p.lede { font-size: 18px; color: var(--ink-soft); }
+
+  .pull {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 23px;
+    line-height: 1.5;
+    color: var(--coral);
+    margin: 28px 0;
+    padding-left: 22px;
+    border-left: 2px solid var(--coral);
+  }
+
+  ul.decisions { list-style: none; padding: 0; margin: 24px 0; }
+  ul.decisions li {
+    padding: 18px 0;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 14px;
+  }
+  ul.decisions li:last-child { border-bottom: 1px solid var(--rule); }
+  ul.decisions .mark { color: var(--coral); font-size: 18px; line-height: 1.5; }
+  ul.decisions strong { display: block; margin-bottom: 4px; }
+  ul.decisions span.body { color: var(--ink-soft); font-size: 15.5px; }
+
+  figure { margin: 36px 0; }
+  figure img { width: 100%; border-radius: 14px; border: 1px solid var(--rule); display: block; }
+  figcaption {
+    font-size: 13.5px;
+    color: var(--ink-faint);
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .img-placeholder {
+    width: 100%;
+    border-radius: 14px;
+    border: 1px dashed var(--rule);
+    background: var(--cream-deep);
+    aspect-ratio: 16/10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 6px;
+    color: var(--ink-faint);
+    font-size: 13.5px;
+    text-align: center;
+    padding: 24px;
+  }
+  .img-placeholder .ph-title { font-weight: 600; color: var(--ink-soft); font-size: 14px; }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 36px 0;
+  }
+  .video-wrap {
+    width: 100%;
+    max-width: 720px;
+    margin: 24px auto 8px;
+    padding: 0 12px;
+  }
+  .video-wrap video,
+  .video-wrap .video-embed iframe {
+    width: 100%;
+    height: auto;
+    max-height: 60vh;
+    border-radius: 14px;
+    border: 1px solid var(--rule);
+    display: block;
+    object-fit: contain;
+    overflow: hidden;
+  }
+
+  /* Smaller screens: reduce max height so video never overflows viewport */
+  @media (max-width: 640px) {
+    .video-wrap { max-width: 100%; padding: 0 8px; }
+    .video-wrap video,
+    .video-wrap .video-embed iframe { max-height: 45vh; }
+  }
+  @media (max-width: 640px) { .gallery-grid { grid-template-columns: 1fr; } }
+
+  .callout {
+    background: var(--teal-soft);
+    border-radius: 14px;
+    padding: 26px 28px;
+    margin: 30px 0;
+  }
+  .callout .section-label { color: var(--teal); margin-bottom: 8px; }
+  .callout p { color: #1F3D33; margin-bottom: 0; font-size: 15.5px; }
+
+  .figma-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--ink);
+    color: var(--cream);
+    border-radius: 14px;
+    padding: 22px 26px;
+    margin: 30px 0;
+  }
+  .figma-card a {
+    color: var(--cream);
+    border-bottom: 1px solid rgba(250,247,242,0.4);
+    font-weight: 500;
+  }
+  .figma-icon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    background: var(--coral);
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+  }
+  .figma-text { font-size: 14.5px; color: var(--ink-faint); }
+  .figma-text strong { display: block; color: var(--cream); font-size: 16px; margin-bottom: 2px; font-weight: 500; }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 28px 0 8px;
+  }
+  @media (max-width: 640px) { .metrics-grid { grid-template-columns: 1fr; } }
+  .metric { padding: 0; }
+  .metric .num {
+    font-family: 'Fraunces', serif;
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--coral);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .metric .label { font-size: 14.5px; color: var(--ink-soft); line-height: 1.45; }
+
+  .voice-flow {
+    background: var(--cream-deep);
+    border-radius: 14px;
+    padding: 26px;
+    margin: 30px 0;
+    font-size: 14.5px;
+  }
+  .voice-flow .turn { display: flex; gap: 12px; padding: 9px 0; align-items: flex-start; }
+  .voice-flow .who {
+    font-weight: 600;
+    width: 70px;
+    flex-shrink: 0;
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding-top: 2px;
+  }
+  .voice-flow .who.user { color: var(--ink-soft); }
+  .voice-flow .who.ai { color: var(--coral); }
+  .voice-flow .line { color: var(--ink); }
+  .voice-flow .annotation {
+    font-style: italic;
+    color: var(--ink-faint);
+    font-size: 13px;
+    margin-top: 2px;
+  }
+
+  footer {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 50px 32px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: var(--ink-faint);
+  }
+  footer a { color: var(--ink-soft); border: none; }
+
+  @media (max-width: 640px) {
+    section { padding: 56px 0; }
+    .role-line { gap: 8px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="index.html">&larr; Back to Portfolio</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow">Case study &middot; Mobile App &middot; UX/UI Design</div>
+  <h1 class="title">kuk</h1>
+  <p class="subtitle">A cooking companion built around your voice, not your screen.</p>
+
+  <div class="role-line">
+    <span><strong>Role</strong> &nbsp;Solo UX/UI Designer, end to end</span>
+    <span><strong>Platform</strong> &nbsp;iOS &amp; Android</span>
+    <span><strong>Scope</strong> &nbsp;Research, IA, UI, design system, conversational UX</span>
+  </div>
+
+  <p class="intro">kuk helps people cook authentic recipes without the chaos that usually happens between finding a great video and actually getting the dish on the table, the dead phone screen, the dirty notebook, the timer that lives in a different app. I designed it end to end: research, information architecture, a full design system, and a conversational cook mode that guides hands free, by voice, instead of by screen.</p>
+</header>
+
+<div class="hero-img-wrap">
+  <div class="hero-img">
+    <img src="images/kuk/hero.png" alt="kuk app hero image" />
+  </div>
+</div>
+
+<main>
+
+  <!-- THE REFRAME -->
+  <section>
+    <div class="section-label">The decision that defined kuk</div>
+    <h2>The obvious product was another recipe app. The real opportunity was voice.</h2>
+    <p class="lede">When I started mapping this project, the easy answer was "build a better place to save recipes." Pinterest, Paprika, and a dozen others already do that reasonably well.</p>
+    <p>What kept surfacing instead, from my own cooking routine, was that saving a recipe was never the hard part. The hard part was the fifteen minutes <em>during</em> the cook: hands covered in flour, phone screen gone dark, scrolling back through a video to find the step I'd lost. I was writing recipes into a paper notebook specifically to avoid my phone, that's a signal, not a quirk.</p>
+    <p>So I made the same kind of call I made on Amorea: the obvious feature would ship, but it would not be the core. Saving and organizing recipes became table stakes. The product's actual bet became a conversational cook mode, an AI sous chef that talks you through a recipe step by step, so your hands never have to touch the screen at all.</p>
+    <div class="pull">Every later decision, the information architecture, where the shopping list lives, what the navigation hides during cooking, flowed from that one reframe.</div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section>
+    <div class="section-label">The user</div>
+    <h2>Target user</h2>
+    <p>The primary user cooks with intention, not convenience. They watch multiple videos before committing to a recipe, often seeking out creators native to that dish's region, an Italian grandmother for cacio e pepe, 
+      not a generic food blogger. They want the right recipe done right, and they're willing to do some work to get there. What they don't want is for the technology to be the thing standing between them and the stove.</p>
+    <ul class="decisions">
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>What they do</strong>
+          <span class="body">Watches multiple videos before choosing a recipe, prioritizing creators from the recipe'sregion of origin</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>What they use</strong>
+          <span class="body">Uses voice assistants (Alexa, Google, Siri) primarily for timers</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>How they do it</strong>
+          <span class="body">Currently writes recipes by hand in a notebook to avoid phone issues while cooking</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>What they shop for</strong>
+          <span class="body">Shops specifically for each recipe not general household shopping</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- USER JOURNEY -->
+  <section>
+    <div class="section-label">Mapping the journey</div>
+    <h2>Four phases, one phase that actually matters most</h2>
+    <p>Before touching any screen, I mapped the full journey from discovering a recipe to archiving the finished dish. Three of the four phases, discover, prepare, Evaluate, are calm. The user has both hands free and time to think.</p>
+    <p>Phase three, cooking, is the only phase where the user's hands are occupied and their attention is divided. It's the phase where every existing tool currently fails them. 
+      That asymmetry is why the cook mode isn't just one feature among several, it's the screen that justifies the whole product.</p>
+    <figure>
+      <img src="images/kuk/Journey.png" alt="Journey map with four phases: Discover & Save · Prepare & Shop · Cook · Evaluate & Archive">
+      <figcaption>User journey map 4-phase journey: Discover & Save · Prepare & Shop · Cook · Evaluate & Archive</figcaption>
+    </figure>
+  </section>
+
+  <!-- KEY DECISIONS -->
+  <section>
+    <div class="section-label">Key decisions</div>
+    <h2>Designing around one constraint: hands are busy</h2>
+    <ul class="decisions">
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>No shopping list tab.</strong>
+          <span class="body">Early architecture had a dedicated shopping section. I cut it. The ingredient checklist now lives inside the recipe itself, where the decision actually happens, you check off what you have while you're already looking at the recipe, not in a separate part of the app.</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Cook mode hides the tab bar entirely.</strong>
+          <span class="body">When you're cooking, nothing else in the app matters. Removing navigation removes the possibility of an accidental exit and keeps the one task that matters in full focus.</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>Voice first, touch as backup, never voice only.</strong>
+          <span class="body">Kitchens are loud and wake words get missed. Every voice action in cook mode has a touch equivalent, so the experience degrades gracefully instead of breaking when voice fails.</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>The "Start cooking" button sits after the checklist, not before.</strong>
+          <span class="body">Placing the primary CTA at the bottom of the ingredient review, rather than at the top of the screen, forces a review step before commitment, a small placement decision that prevents a real failure mode: starting a recipe you can't finish.</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- DESIGN SYSTEM -->
+  <section>
+    <div class="section-label">A system built to scale</div>
+    <h2>One component library, two platforms</h2>
+    <p>I built kuk's design system early rather than retrofitting it once screens existed. With 16 native adapted iOS screens and 16 for Android sharing one underlying component library, consistency couldn't be optional, every button, card, and input had to hold its meaning across both platforms while still respecting each one's conventions.</p>
+    <p>The palette stays warm and food adjacent on purpose, never clinical, never the cold blue and white most utility apps default to. 
+      The visual language has to stay quiet, because the app is most often used in a messy, distracting kitchen where every extra visual decision is a tax on attention.</p>
+      <figure>
+      <img src="images/kuk/system.png" alt="Design system components and tokens">
+      <figcaption>Design system: Color tokens, type scale, components: buttons, cards, checklist rows, tab bar</figcaption>
+    </figure>
+  </section>
+
+  <!-- CONVERSATIONAL UX DEEP DIVE -->
+  <section>
+    <div class="section-label">Designing the cook mode's behavior, not just its screens</div>
+    <h2>The hardest part wasn't the UI. It was defining how the AI sous chef thinks.</h2>
+    <p>This is the part of kuk I'm proudest of, because it's the part that isn't a screen at all. A conversational flow has to handle interruption, ambiguity, and recovery, none of which a static wireframe captures. I designed the dialogue logic the same way I'd design a flow chart for any other system, with explicit rules for what the assistant does and doesn't do.</p>
+
+    <h3 class="sub-h">Core interaction rules</h3>
+    <ul class="decisions">
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>State awareness over one shot commands.</strong>
+          <span class="body">Generic assistants treat every request as isolated. kuk's cook mode always knows which step you're on, so "how much longer?" and "go back" resolve correctly without you having to repeat context.</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>In context clarification, not dead ends.</strong>
+          <span class="body">If you ask "what does al dente mean?" mid step, the assistant answers in place and returns you to the recipe it never forces you out of cook mode to get an answer.</span>
+        </div>
+      </li>
+      <li>
+        <span class="mark">&mdash;</span>
+        <div>
+          <strong>A confirm then advance pattern, not autoplay.</strong>
+          <span class="body">The assistant reads a step and waits for "done" or "next", spoken or tapped, before moving on. It guides at the user's pace instead of racing ahead of someone still chopping.</span>
+        </div>
+      </li>
+    </ul>
+
+    <h3 class="sub-h">A sample exchange</h3>
+    <div class="voice-flow">
+      <div class="turn"><span class="who ai">kuk</span><span class="line">Step 2 of 5. Boil the pasta in salted water until al dente.</span></div>
+      <div class="turn"><span class="who user">You</span><span class="line">What does al dente mean?</span></div>
+      <div class="turn"><span class="who ai">kuk</span><span class="line">Firm to the bite, not soft all the way through, usually a minute or two less than the package says.</span></div>
+      <div class="turn"><span class="who user">You</span><span class="line">Got it. Set a timer for 9 minutes.</span></div>
+      <div class="turn"><span class="who ai">kuk</span><span class="line">Timer set for 9 minutes. I'll let you know when it's done.</span><span class="annotation">stays on step 2, doesn't advance until you confirm</span></div>
+    </div>
+
+    <p>Designing this meant thinking like a conversation designer and a product owner at once: what the assistant is allowed to say, when it asks versus assumes, and how it fails gracefully when it mishears something in a noisy kitchen. None of that shows up in a static frame, but all of it shows up the first time someone actually tries to use it.</p>
+  </section>
+
+  <!-- PROTOTYPE LINK -->
+  <section>
+    <div class="section-label">Try it</div>
+    <h2>Interactive prototype</h2>
+    <p>The full flow, from feed to recipe detail to an active cook mode session, is built out as a clickable prototype in Figma.</p>
+    <div class="figma-card">
+      <div class="figma-icon">&#9656;</div>
+      <div class="figma-text">
+        <strong>kuk, Interactive Prototype</strong>
+        <a href="https://www.figma.com/proto/JCNBaxvmwyyyRbYJnoJEkz/kuk?node-id=18-665&viewport=-2293%2C-330%2C0.24&t=IMosZnAHA5bNnjIN-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=18%3A665&show-proto-sidebar=1&page-id=22%3A308" target="_blank" rel="noopener">View in Figma &rarr;</a>
+        <!-- <div style="margin-top:2px;">Replace this link with your published Figma prototype URL</div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULT -->
+  <section>
+    <div class="section-label">The result</div>
+    <h2>A cooking companion that gets out of the way while you cook</h2>
+    <p>kuk gives home cooks one place to save recipes worth trusting, see at a glance what they're missing before they shop, and cook hands free without losing their place, replacing a dead phone screen and a flour dusted notebook with a guide that simply talks them through it.</p>
+  </section>
+
+  <!-- METRICS -->
+  <section>
+    <div class="section-label">What it delivered</div>
+    <div class="metrics-grid">
+      <div class="metric">
+        <div class="num">32</div>
+        <div class="label">screens designed across iOS and Android, platform adapted from one shared system</div>
+      </div>
+      <div class="metric">
+        <div class="num">20</div>
+        <div class="label">distinct app states mapped in the sitemap, from onboarding through post cook review</div>
+      </div>
+      <div class="metric">
+        <div class="num">1</div>
+        <div class="label">navigation section eliminated by relocating the shopping list into the recipe context</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAKEAWAY -->
+  <section>
+    <div class="section-label">What I took away</div>
+    <h2>The best UX decision on this project was never a screen</h2>
+    <p>The strongest move on kuk wasn't a layout choice, it was recognizing that the product's value lived in a moment with no screen at all, the thirty seconds where your hands are covered in dough and you just need to know what's next. Designing for that meant designing behavior, dialogue, and failure recovery, not just hierarchy and spacing.</p>
+    <p>It reinforced something I learned on Amorea from a different angle: the best reframe isn't the one that adds the most features, it's the one that tells you what to leave out. 
+      Here, that meant trusting voice as the primary interface and treating the screen as the backup, the opposite of how most mobile apps default to thinking.</p>
+  </section>
+
+  <!-- GALLERY -->
+  <section>
+    <div class="section-label">Final product</div>
+    <h2>Video demo</h2>
+    <div class="video-wrap">
+            <video controls playsinline webkit-playsinline controlsList="nofullscreen nodownload" poster="images/kuk/video poster.png">
+              <source src="images/kuk/kuk demo.mp4" type="video/mp4">
+          Your browser does not support the video tag. <a href="images/kuk/kuk demo.mp4">Download video</a>.
+        </video>
+        <!--
+          Alternatively embed a hosted video (YouTube/Vimeo) by replacing the <video> above with the iframe below:
+          <div class="video-embed">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="kuk demo" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          </div>
+        -->
+      </div>
+      <p style="font-size:13.5px; color:var(--ink-faint); text-align:center; margin-top:8px;">Click on the video to see the app demo</p>
+  </section>
+
+</main>
+
+<footer>
+  <span>&copy; Erandi M.</span>
+  <a href="index.html">&larr; Back to Portfolio</a>
+</footer>
+
+</body>
+</html>
